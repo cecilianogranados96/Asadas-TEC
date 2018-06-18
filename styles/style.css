@@ -1,0 +1,1374 @@
+header{
+	background-color: white;
+	width: 100%;
+	height: 150px;
+	margin:0px;
+	padding: 0px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #BEBEBE;
+}
+
+.header-icono{
+	height: 100%;
+	float: left;
+	width: 20%;
+}
+
+.icono-usuario{
+	height: 50%;
+	width: 50%;
+}
+
+.header-logo{
+	background-image:url('../images/logoASADA.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left: 3%;
+	width:20%;
+	height: 100%;
+	float: left;
+}
+
+.header-right{
+	width: 70%;
+	height: 100%;
+	float: right;
+}
+
+.header-top{
+	height: 50%;
+	width: 100%;
+}
+
+.header-icono-texto{
+	padding-top: 3%;
+	width: 80%;
+}
+
+.header-top span{
+	color: #b5b5b5;
+	font-style: italic;
+	font-family: "Pontano Sans", sans-serif;
+	margin-left: 1%;
+	font-size: 90%;
+}
+
+.header-top-logo{
+	width: 40%;
+	float: left;
+	padding-top: 4%;
+	margin-left: 25%;
+}
+
+.header-top-usuario{
+	width: 35%;
+	float: right;
+	padding-top: 2%;
+}
+
+.header-bottom{
+	height: 50%;
+	width: 72%;
+	padding-left: 20%;
+	padding-right: 8%;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #BEBEBE;
+}
+
+.header-bttn{
+	float: left;
+	background-color: transparent;
+	color:#1A64C5;
+	width:20%;
+	padding-top: 30px;
+	height: 100%;
+	font-family: "Pontano Sans", sans-serif;
+	font-size: 100%;
+	text-align: center;
+	text-decoration: none;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #BEBEBE;
+}
+
+.header-bttn:hover,.header-bttn:active,.header-bttn:focus {
+  background: #4380CF;
+  color: white;
+  font-weight: bold;
+}
+
+.main-content{
+	height: auto;
+	display: flex;
+}
+
+.actual-content{
+	background: #f2f2f2;
+	width: 85%;
+	float: right;
+}
+
+.fondo-general{
+	background-color: #dcdcdc;
+	width: 100%;	
+	min-height: 400px;
+}
+
+.segundo-fondo-general{
+	background-color: #dcdcdc;
+	width: 86%;
+	margin-left: 7%;
+	padding-top: 2%;
+	padding-bottom:2%; 
+}
+
+.tercer-fondo-general{
+	background-color: white;
+	width: 86%;
+	margin-left: 7%; 
+	padding-top: 4%;
+
+}
+.sidebar{
+	width: 15%;
+	float:left;
+}
+
+.sidebar a{
+	width: 100%;
+	height: 40px;
+	background-color: white;
+	padding-top: 15px;
+	font-family: "Pontano Sans", sans-serif;
+	font-size: 100%;
+	color: #1a64c5;
+	float: left;
+	text-align: center;
+	text-decoration: none;
+	border-top-width: 2px;
+	border-color: black;
+}
+
+.sidebar a:hover{
+	background-color: #e6e6e6;
+}
+
+.rest{
+	background-image:url('../images/khe.jpg');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+	width:100%;
+	height: 750px;
+	float: right;
+}
+
+footer{
+	background-color: #f2f2f2;
+	height:350px;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	float: right;
+	text-align: center;
+	color: #1A47C8;
+}
+
+.footer-left{
+	margin-left: 15%;
+	margin-top: 2%;
+	float: left;
+	width: 35%;
+	height: 90%;
+	background-color: #f2f2f2;
+}
+
+
+.footer-right{
+	margin-right: 15%;
+	margin-top: 2%;
+	float: right;
+	width: 35%;
+	height: 90%;
+	background-color: #f2f2f2;
+}
+
+.footer-bottom{
+	background-color: #f2f2f2;
+	text-align: center;
+	height: 10%;
+	width: 100%;
+	font-family: "Pontano Sans", sans-serif;
+	float: right;
+}
+
+footer h3{
+	font-family: "Pontano Sans", sans-serif;
+	text-align: left;
+	margin-left: 3%;
+	color: #1A47C8;
+}
+
+footer a{
+	font-family: "Pontano Sans", sans-serif;
+	text-align: left;
+	margin-left: 3%;
+	color: #1A47C8;
+}
+
+.footer-left div, .footer-right div{
+	text-align: left;
+}
+
+.footer-bottom div{
+	background-color: #f2f2f2;
+}
+
+body{
+	margin:0px;
+	height: 100%;
+	width: 100%;
+}
+
+.mensaje-principal{
+	width: 50%;
+	float: left;
+	margin-left: 10%;
+	margin-top: 3%;
+	padding-right: 5%;
+}
+
+.mensaje-principal h1{
+	font-family: "Pontano Sans", sans-serif;
+	color: white;
+	font-weight: bold;
+	font-size: 310%;
+	text-shadow: 2px 2px black;
+}
+
+.mensaje-principal span{
+	font-family: "Pontano Sans", sans-serif;
+	color: white;
+	font-size: 150%;
+	text-shadow: 2px 2px black;
+}
+
+.form {
+  width: 25%;
+  position: relative;
+  float:left;
+  margin-top: 5%;
+  z-index: 1;
+  background: #FFFFFF;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Pontano Sans", sans-serif;
+  outline: 0;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form input[type="submit"] {
+  font-family: "Pontano Sans", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1A64C5;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.form button {
+  font-family: "Pontano Sans", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1A64C5;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #1A47C8;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+  font-family: "Pontano Sans", sans-serif;
+}
+.form .message a {
+  color: #1A64C5;
+  text-decoration: none;
+}
+
+
+
+#noticia-container{
+	width: 100%;
+}
+
+.specific-new{
+	padding-bottom: 2%;
+	margin-left: 10%;
+	margin-top:5px;
+	width: 80%;
+    display: table;
+
+}
+
+.news-feed{
+	width: 100%;
+}
+
+.espacio-foto-noticia{
+	/*height: 200px; */
+    width: 100%;	
+	float: center;
+	border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 0px;
+	overflow: hidden;
+}
+
+.foto-noticia{
+  width: 670px;
+  height: 470px;
+  border-radius: 8px;
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
+.descripcion-foto-noticia{
+	color: #52527a;
+	width: auto;
+}
+
+.fechahora-foto-noticia{
+	color: #8585ad;
+}
+
+.descripcion-foto-noticia, .fechahora-foto-noticia{
+	font-family: "Pontano Sans", sans-serif;
+	font-size: 90%;
+	margin-left: 1%;
+}
+
+.texto-noticia{
+	width: 100%;
+	font-family: "Pontano Sans", sans-serif;
+	font-size: 90%;
+	text-align: justify;
+	padding-top: 4%;
+	margin-top: 80%;
+}
+
+.noticia-titulo{
+	font-family: 'Merriweather', serif;
+	color: #162040;
+}
+
+/***************************************************/
+
+.contact-page{
+	margin-top: 2%;
+	margin-left: 5%;
+}
+
+.contact-page h1{
+	font-family: "Pontano Sans", sans-serif;
+}
+
+.contact-page p{
+	font-family: "Pontano Sans", sans-serif;
+}
+
+/*********************************************/
+
+.ASADAS{
+	margin-top: 5%;
+}
+
+.ASADAS h1{
+	font-family: "Pontano Sans", sans-serif;
+	margin-left: 10%;
+}
+
+.ASADAS p{
+	font-family: "Pontano Sans", sans-serif;
+	margin-left: 10%;
+}
+
+/********************************************/
+
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+
+}
+
+
+/************Adm_Resolver_Tramite****************/
+
+.cont-resolver-tramite{
+	width: 90%;
+	margin-left: 5%;
+}
+
+.cont-resolver-tramite form{
+	font-family: "Pontano Sans", sans-serif;
+	outline: 0;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+.cont-resolver-tramite span{
+	width: 100%;
+}
+
+.cont-resolver-tramite h1{
+	margin-left: 2%;
+}
+
+.cont-resolver-tramite input{
+	font-family: "Pontano Sans", sans-serif;
+	outline: 0;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+.cont-resolver-tramite input[type=submit]{
+	background-color: #1A64C5;
+	text-transform: uppercase;
+	outline: 0;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+
+.form-title{
+	font-family: "Pontano Sans", sans-serif;
+	font-weight: bold;
+	color: #1A64C5;
+}
+
+.form-label{
+	font-family: "Pontano Sans", sans-serif;
+	font-weight: bold;
+	margin-top: 10px;
+	color: #4d4d4d;
+}
+
+.form-select{
+	font-family: "Pontano Sans", sans-serif;
+	outline: 0;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+
+/**************** FONTANEROS *******************/
+
+
+.button-reg-fontanero{
+	font-family: "Pontano Sans", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #1A64C5;
+	width: 15%;
+	border: 0;
+	padding: 10px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+	margin-top: 15px;
+}
+
+
+/**********ADM-Ver-tramitesPendientes*********/
+
+.contenido-tramitesPendientes{
+	padding-left: 10%;
+	padding-right: 10%;
+	margin-top: 50px;
+}
+
+.contenido-tramitesPendientes span{
+	font-family: "Pontano Sans", sans-serif;
+}
+
+.cont-filtros-tramites{
+	width: 100%;
+	margin-top: 10px;
+}
+
+.cont-filtros-tramites select{
+	width: 25%;
+	margin-right: 2%;
+}
+
+.cont-filtros-tramites span{
+	font-family: "Pontano Sans", sans-serif;
+}
+
+.cont-filtros-tramites input[type=submit]{
+	width: 15%; 
+}
+
+
+/*************** JORGE ***************/
+
+
+/******* MIS TRAMITES  ********/
+
+.restselect{
+	background-image:url('../images/khe.jpg');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+	width:100%;
+	height: 500px;
+	float: right;
+}
+
+/***************************************************/
+
+/******************** inicio de cliente ************/
+
+.contenido{
+	width:100%;
+	background-color: #DCDCDC;
+	height: 1000px;
+	padding-bottom: 30px;
+	float: right;
+}
+
+.texto-noticiadestacada{
+	width: 100%;
+	font-family: "Pontano Sans", sans-serif;
+	font-size: 180%;
+	font-weight: bold;
+	text-align: justify;
+	color: #1A64C5;
+}
+
+.slideshow-image{
+	height: 500px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.slideshow-image img{
+	height: auto;
+	width: 100%;
+}
+
+/***************************************************/
+
+/******************* sobre ASADA ******************/
+
+.texto-nombreasada{
+	width: 100%;
+	font-family: "Pontano Sans", sans-serif;
+	font-size: 170%;
+	font-weight: bold;
+	text-align: justify;
+	color: #134990;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 30px;
+}
+
+.texto-tituloasada{
+	width: 100%;
+	font-family: "Pontano Sans", sans-serif;
+	font-size: 140%;
+	font-weight: bold;
+	text-align: justify;
+	color: #1A64C5;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 30px;
+}
+
+.foto-asada{
+	display: block;
+	width: 80%;
+    max-height: 80%;
+    margin-bottom: 1%;
+    border-radius: 8px;
+	padding-left: 30px;
+}
+
+.texto-sobreasada{
+	width: 80%;
+	font-family: "Pontano Sans", sans-serif;
+	font-size: 90%;
+	text-align: justify;
+	padding-left: 30px;
+}
+
+/**************************************************/
+
+/******************** ver trámite ****************/
+
+.contenido-tramite{
+	background-color: #f2f2f2;
+	width: 100%;
+	height: 400px;
+	float: right;
+}
+
+.tramite {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  background: #FFFFFF;
+  max-width: 800px;
+  padding: 50px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th ,td{
+    text-align: left;
+	font-family: "Pontano Sans", sans-serif;
+	padding: 5px;
+	border-bottom: 1px solid #ddd;
+}
+
+th{
+	background-color: #1A64C5;
+    color: white;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2}
+
+.tramite button {
+  font-family: "Pontano Sans", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1A64C5;
+  width: 30%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  float: right;
+  margin-left: 10px;
+}
+
+.divider{
+    width:1px;
+    height:auto;
+    display:inline-block;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+}
+
+.container a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/************************************************/
+
+/************** llenar tramite *****************/
+.contenido-llenartramite{
+	padding: 50px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+.texto-titulo{
+	width: 100%;
+	font-family: "Pontano Sans", sans-serif;
+	font-size: 180%;
+	font-weight: bold;
+	text-align: justify;
+	color: #1A64C5;
+}
+
+.texto-descripcion{
+	width: 100%;
+	font-family: "Pontano Sans", sans-serif;
+	font-size: 14px;
+	font-style: italic;
+	text-align: justify;
+}
+
+dl{
+	width: 100%;
+	font-family: "Pontano Sans", sans-serif;
+	font-size: 13px;
+	text-align: justify;
+}
+
+input {
+  font-family: "Pontano Sans", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+select {
+  font-family: "Pontano Sans", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+/***********
+button {
+  font-family: "Pontano Sans", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1A64C5;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+*************/
+
+.azul-bttn {
+  font-family: "Pontano Sans", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1A64C5;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.azul-bttn-little {
+  font-family: "Pontano Sans", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1A64C5;
+  width: 40%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 5px;
+  margin: 5px;
+}
+
+.tabla-tramite{
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.tramite-bttn {
+  font-family: "Pontano Sans", sans-serif;
+  outline: 0;
+  background: #dcdcdc;
+  width: 100%;
+  border: 0;
+  color: black;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 3px;
+}
+
+.tramite-bttn:hover{
+  background: #1A64C5;
+  color:white;
+}
+
+/************************************************/
+
+/************** llenar tramite *****************/
+.contenido-tramites{
+	padding: 50px;
+}
+
+
+/**********************************************/
+/*************** Inicio cliente ***************/
+
+#wrap {
+   width:100%;
+   margin: 0 auto;
+}
+#left_col {
+   float:left;
+   width:50%;
+}
+#right_col {
+   float:right;
+   width:42%;
+}
+
+hr.vertical
+{
+   width: 0px;
+   height: 100%; /* or height in PX */
+} 
+/*********************************************/
+/*********** crear noticia *******************/
+textarea {
+	/****
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+	******/
+	
+	font-family: "Pontano Sans", sans-serif;
+	outline: 0;
+	background: #f2f2f2;
+	width: 100%;
+	height: 200px;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+	resize: none;
+}
+
+
+/********************************************************** THIS IS NEW TBH ***********************************************************/
+
+/**************************************/
+/***************** registro **********/
+.login {
+  padding-left: 17%;
+  padding-right: 17%;
+  padding-bottom: 5%;
+}
+
+.login input [type="text"] {
+  font-family: "Pontano Sans", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.login input [type="submit"] {
+  font-family: "Pontano Sans", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.login select{
+  font-family: "Pontano Sans", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.login button {
+  font-family: "Pontano Sans", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1A64C5;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.login button:hover {
+  background: #1A47C8;
+}
+
+.login h1 {
+  font-family: "Pontano Sans", sans-serif;
+  font-size: 20px;
+  padding-bottom: 5px;
+  color: #1A64C5;
+}
+
+.login h2 {
+  font-family: "Pontano Sans", sans-serif;
+  font-size: 15px;
+  text-align: left;
+}
+
+.login a {
+  color:inherit;
+  text-decoration: none;
+ }
+
+.login input[type='checkbox'] {
+  float: left;
+  width: 20px;
+}
+
+.login input[type='checkbox'] + label {
+  display: block;
+  width: 300px;
+  font-family: "Pontano Sans", sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
+
+.cb {
+  display: none;
+}
+label {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 5px;
+}
+
+label:before {
+  line-height: 20px;
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #666666;
+}
+input[type=checkbox]:checked + label:before{
+  content: "\2713";
+  font-weight: bold;
+  color: #1A64C5;
+  text-align: center;
+  line-height: 16px;
+}
+
+/**********************************************/
+/***************** selectasada **********/
+.selectasada {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 6%;
+}
+
+.selectasada h1 {
+  font-family: "Pontano Sans", sans-serif;
+  font-size: 20px;
+  color: #1A64C5;
+}
+
+.selectasada button {
+  font-family: "Pontano Sans", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1A64C5;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.selectasada button:hover{
+  background: #1A47C8;
+}
+
+/**********************************************/
+/***************** Mis trámites **********/
+.azul-bttn-peq {
+  font-family: "Pontano Sans", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1A64C5;
+  width: 25%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.azul-bttn:hover {
+  background: #1A47C8;
+}
+
+.azul-bttn-peq:hover {
+  background: #1A47C8;
+}
+
+/**********************************************/
+/***************** sobre asada **********/
+.sobreasada{
+	padding-left: 17%;
+	padding-right: 10%;
+	padding-bottom: 7%;
+}
+
+/**************************************/
+/************ noticias *****************/
+.noticias-titulo{
+	font-family: "Pontano Sans", sans-serif;
+	font-weight: bold;
+	font-size: 130%;
+	color: #9B9B9B;
+}
+
+.espacio-foto-noticias{
+	height: 500px; 
+    width: 100%; 
+	float: left;
+	border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.index-titulo{
+	font-family: "Pontano Sans", sans-serif;
+	font-weight: bold;
+	font-size: 180%;
+	color: white;
+}
+
+/******************** DROPDOWN Y ASI ******************/
+
+#nav {
+    background-color: white;
+    font-family: "Pontano Sans", sans-serif;
+}
+
+#nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-width: 17%;
+}
+#nav ul li {
+    display: inline-block;
+}
+#nav ul li:hover {
+    background-color: #;
+}
+#nav ul li a, visited {
+    color: #848484;
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+	font-size: 90%;
+}
+#nav ul li:hover ul {
+    display: block;
+
+}
+#nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #b5b5b5;
+    border-top: 0;
+    padding-top: 5px;
+}
+#nav ul ul li {
+    display: block;
+
+}
+#nav ul ul li a:hover {
+    color: #1A64C5;
+}
+
+.formulario-buttons{
+	margin-top: 15px;
+}
+
+.long-bttn{
+  font-family: "Pontano Sans", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #1A64C5;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+/********************* asadas ***************/
+.container {
+    position: relative;
+    width: 45%;
+	float: left;
+	padding: 2%;
+}
+
+.avatar {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #1A64C5;
+  font-family: "Pontano Sans", sans-serif;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+/******************************************/
+.hvrbox,
+.hvrbox * {
+	box-sizing: border-box;
+}
+.hvrbox {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	width: 45%;
+	height: auto;
+	margin-left: 2%;
+}
+.hvrbox img {
+	position: center;
+    float: left;
+    height:  200px;
+	width: 100%;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+	
+	/*
+	height: 500px;
+	width: 100%;
+	overflow: hidden;
+	*/
+}
+.hvrbox .hvrbox-layer_bottom {
+	display: block;
+}
+.hvrbox .hvrbox-layer_top {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	padding: 15px;
+	-moz-transition: all 0.4s ease-in-out 0s;
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	-ms-transition: all 0.4s ease-in-out 0s;
+	transition: all 0.4s ease-in-out 0s;
+}
+.hvrbox:hover .hvrbox-layer_top,
+.hvrbox.active .hvrbox-layer_top {
+	opacity: 1;
+}
+.hvrbox .hvrbox-text {
+	text-align: center;
+	font-size: 18px;
+	font-family: "Pontano Sans", sans-serif;
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-moz-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.hvrbox .hvrbox-text_mobile {
+	font-size: 15px;
+	border-top: 1px solid rgb(179, 179, 179); /* for old browsers */
+	border-top: 1px solid rgba(179, 179, 179, 0.7);
+	margin-top: 5px;
+	padding-top: 2px;
+	display: none;
+}
+.hvrbox.active .hvrbox-text_mobile {
+	display: block;
+}
+
+.contenido-asadas{
+	padding-top: 3%;
+	padding-right: 10%;
+	padding-left: 12%;
+	padding-bottom: 7%;
+}
+
+.fondo-general-admin{
+	background-color: white;
+}
