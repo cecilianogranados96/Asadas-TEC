@@ -1,0 +1,145 @@
+/*
+============== background Color====================
+*/
+.btn-text,
+.featugreen-item.feature-bg-box:hover,
+.b-line,
+.link-zoom a.project_links,
+.blog-date,
+.bg-color,
+.header .navigation ul ul li:hover > a,
+.faq .collape-plus,
+.line-h:after,
+.hi-icon-effect-3 .hi-icon:after,
+a.btn.xplus-btn.pricing.active:hover,
+a.btn.xplus-btn.pricing.active,
+.arrow_theme .owl-prev:hover,
+.arrow_theme .owl-next:hover,
+.mainmenu-area .link_btn .thm-btn,
+.bg-color,
+.post-meta .post-more-link a.btn-Blue,
+.blog-post blockquote,
+.pagination-nav ul li.active a,
+.pagination-nav ul li:hover a,
+.sidebar-widget .widget-tag li a:hover,
+.item-nav .item-prev:hover .prev-btn,
+.item-nav .item-next:hover .next-btn,
+.quote:after,
+.mainmenu-area:after,
+.header.sticky .navigation ul ul li:hover > a,
+.header .navigation ul ul li:hover > a,
+.navigation ul ul li > a:hover,
+.page-signin .body-inner:before,
+.ui-input-group .input-bar:before,
+.ui-input-group .input-bar:after, .newsletter .newsletter-btn, .arrow_theme .owl-prev:hover, .arrow_theme .owl-next:hover,
+.box-hover:hover .team-block, .plan-content-box h3::after,
+#team .team-pagination .owl-controls .owl-nav .owl-prev, #team .team-pagination .owl-controls .owl-nav .owl-next, .tparrows.default,
+.sk-circle .sk-child:before, .dark-bg, .hover-bg:hover, #choose_us, 
+.home-sty .panel-group .panel-heading + .panel-collapse > .panel-body,
+.member_S_links__block, #blog .blog-sec .gray-bg:hover,.section-bar {
+  background: #1aa8ce;
+}
+
+.home-sty .panel-group .panel-heading {
+  background: #1399bd;
+}
+
+.top_footer_info__block {
+  background: #1aa8ce;
+  /* The Fallback */
+  background: rgba(27, 189, 232, 0.9);
+}
+
+.footer-link::before {
+  background: #0c6177;
+}
+
+/*
+============== Text Color====================
+*/
+.text-color,
+.container-filter li a.active,
+.container-filter li a:hover,
+.hi-icon-effect-3b .hi-icon,
+.service_details h5 a,
+.post-meta span > a > i,
+.header-contact-info ul li .iocn-holder span,
+.main-menu .navigation > li:hover > a,
+.main-menu .navigation > li.current > a,
+.main-menu .navigation > li > ul > li:hover > a,
+.nav_side_content .search_option form button,
+.name-text,
+.post-meta .post-more-link a.btn-Blue:hover,
+.pagination-nav ul li a,
+.sidebar-widget ul li a:hover,
+.lead-point li,
+.blog-post .fa-tag,
+.post-meta span > a > i,
+.item-nav .item-prev .prev-btn,
+.item-nav .item-next .next-btn,
+.contact .icon-circle,
+.contact-info .info li .icon,
+.btn-text:hover,
+.featugreen-item.feature-bg-box .icon i,
+.pricing-2 .price, .pricing-2 .currency-symbol,
+.top-bar-area p i,
+.single-sidebar-widget .special-links li:hover a,
+.single-sidebar-widget .special-links li a.active,
+.custom-check:before,
+.color-primary, a.color-primary,
+.ui-input-group > input:focus ~ label,
+.ui-input-group > textarea:focus ~ label,
+.big-font i, .color, .inner-intro .page-breadcrumb span, .content-box .donate-price b, .course_features_point li i,
+.course__details_block .student-feedback .rating-title .inner .rating .fa,
+.course__details_block .student-comment .comment-inner .student-info .info-inner .rating .fa, .event__date, .event__month,
+#our-services .about-block:hover h3 a, .icon-lf i, .single-sidebar-widget .special-links li a.active:after, .more_btn__block,
+#blog .blog-post .post-header h4 a:hover {
+  color: #1aa8ce;
+}
+
+.widget-tag li a {
+  color: #1aa8ce !important;
+}
+
+.quote:before,
+.color-primary, a.color-primary:hover {
+  color: #019be3;
+}
+
+/*
+============== Border Color====================
+*/
+.btn-text,
+.pricing-2 .pricing_table.active,
+.pricing-2 .price, .pricing-2 .currency-symbol,
+a.btn.xplus-btn.pricing.active:hover,
+a.btn.xplus-btn.pricing.active,
+.arrow_theme .owl-prev:hover,
+.arrow_theme .owl-next:hover,
+.header-contact-info ul li .iocn-holder,
+.nav_side_content .search_option form,
+.post-meta .post-more-link a.btn-Blue:hover,
+.pagination-nav ul li a,
+.widget-tag li a,
+.blog-post-hr input[type="text"]:focus,
+.blog-post-hr textarea:focus,
+.item-nav .item-prev .prev-btn,
+.item-nav .item-next .next-btn,
+.contact .icon-circle,
+.single-sidebar-widget .special-links li a:before,
+.widget-search input[type="text"]:focus,
+.contact-form input[type="text"]:focus,
+.contact-form textarea:focus,
+.custom-check,
+.client-avtar, .arrow_theme .owl-prev:hover, .arrow_theme .owl-next:hover,
+#team .team-pagination .owl-controls .owl-nav .owl-prev, #team .team-pagination .owl-controls .owl-nav .owl-next, .icon-lf {
+  border-color: #1aa8ce;
+}
+
+.team-member .inner-box .overlay-box:after {
+  border-bottom-color: #1aa8ce;
+}
+
+.hi-icon-effect-3 .hi-icon {
+  box-shadow: 0 0 0 2px #1aa8ce;
+}

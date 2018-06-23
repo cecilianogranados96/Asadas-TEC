@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ASADAS</title>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+    <script type="text/javascript" src="js/sidebar.js"></script>
+    <script type="text/javascript" src="js/adm_fontaneros.js"></script>
+    <script type="text/javascript" src="js/cookies.js"></script>
+    <script type="text/javascript" src="js/nombres.js"></script>
+    <script type="text/javascript" src="js/footer.js"></script>
+</head>
+<body>
+
+<header id="mainHeader">
+	<!--div class="header-logo"></div>
+	<div class="header-right">
+		<div class="header-top">
+			<div class="header-top-logo">
+				<span id="headerASADA" class="header-top-nombreasada">Está conectado a: </span>
+			</div>
+			<div class="header-top-usuario">
+				<div class="header-icono"><img class="icono-usuario" src="images/icono_usuario.png"></div>
+				<div id="nav" class="header-icono-texto">
+					<ul>
+						<li> <a id="usuarioConectado" href="#">xxxxx@xxxx.com</a>
+							<ul>
+							<li><a href="index.html">Cerrar sesión</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+	        </div>
+		</div>
+		<div class="header-bottom">
+			<a class="header-bttn" href="adm_inicio.html">Inicio</a>
+			<a class="header-bttn" href="adm_verNoticias.html">Noticias</a>
+			<a class="header-bttn" href="sobreasada_admin.html">Sobre Nosotros</a>
+			<a class="header-bttn" href="contacto.html">Contáctenos</a>
+		</div>
+	</div-->
+</header>
+
+<div class="main-content">
+	<div class="sidebar">
+        <div id="sidebarMenu">
+        </div>
+		<!--a href="adm_tramitesPendientes.html">Trámites</a>
+		<a href="adm_admins.html">Administradores</a>
+		<a href="adm_plantillas.html">Plantillas</a>
+		<a href="adm_fontaneros.html">Fontaneros</a>
+		<a href="adm_juntaDirectiva.html">Junta Directiva</a>
+		<a href="adm_estaAsociacion.html">Esta Asociación</a>
+		<a href="adm_noticias.html">Administrar Noticias</a>
+		<a href="adm_crearFormulario.html">Crear Formulario</a-->
+	</div>
+	<div class="actual-content">
+		<div class="fondo-general">
+				<div class="segundo-fondo-general">
+					<div class="tercer-fondo-general">
+						<div class="contenido-llenartramite">
+							<div class="texto-titulo">Fontaneros</div>
+							<br>
+							<table id="fontaneros" name="fontaneros" width=100%>
+							  <tr>
+								<th>Nombre completo</th>
+								<th>Correo Electrónico</th>
+								<th></th>
+								<th></th>
+							  </tr>
+							</table>
+
+							<div class="formulario-buttons">
+								<br>
+								<a href="adm_registrarFontanero.html" class="azul-bttn-little">Registrar fontanero</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+	</div>
+</div>
+
+<footer id="mainFooter">
+	<!--div id="footerASADA" class="footer-left">
+		<h3>ASADAS inscritas</h3>
+
+	</div>
+
+	<div id="footerContacto" class="footer-right">
+		<h3>Contacto</h3>
+	</div>
+
+	<div class="footer-bottom"> 
+		<div> Instituto Tecnológico de Costa Rica ® 2017 </div>
+	</div-->
+</footer>
+
+<script>
+function myFunction(cvalue) {
+    var cname = "fontanero";
+    var exdays = 1;
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    location.assign("http://asadacr.000webhostapp.com/adm_modificarFontanero.html");
+}
+</script>
+
+<script>
+function borrar(cvalue) {
+    var cname = "fontanero";
+    var exdays = 1;
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    
+    var r = confirm("¿Desea borrar el fontanero seleccionado?");
+    if (r == true) {
+        $.ajax({
+          url:'php/eliminarFontanero.php',
+          complete: function (response) {
+              alert("Se eliminó el fontanero exitosamente.");
+              location.assign("http://asadacr.000webhostapp.com/adm_fontaneros.html");
+          },
+          error: function () {
+              alert("No se pudo eliminar al fontanero.");
+          }
+        });
+        
+    }
+}
+</script>
+
+</body>
+
+</html>

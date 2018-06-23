@@ -1,0 +1,86 @@
+<?php
+include("dbconnection.php");
+
+$nombre = $_POST['nombre1'];
+$primerApellido = $_POST['primerApellido1'];
+$segundoApellido = $_POST['segundoApellido1'];
+$password = $_POST['password1'];
+$correo = $_POST['email1'];
+$cedula = $_POST['cedula1'];
+$telefono = $_POST['telefono1'];
+$distrito = $_POST['distrito1'];
+$direccion =  $_POST['direccionExacta1'];
+
+$query = mysqli_query($conn,"SELECT idDISTRITO FROM DISTRITO WHERE nombre = '$distrito';");
+$results = mysqli_fetch_array($query);
+$distrito = $results['idDISTRITO'];
+
+$sql = "INSERT into PERSONA (nombre, primerApellido, segundoApellido,idPersona, direccion, DISTRITO_idDISTRITO) values ('$nombre', '$primerApellido', '$segundoApellido','$cedula', '$direccion', $distrito )";
+
+if(mysqli_query($conn, $sql)){
+
+    $sql = "INSERT into USUARIO (nombreUsuario, contrasena, TIPO_USUARIO_IDTIPO_USUARIO,PERSONA_cedula) values ('$correo', '$password',0,'$cedula')";
+    
+    $query_TelefonoId = mysqli_query($conn, "SELECT MAX(idTELEFONO) FROM `TELEFONO`");
+    $results = mysqli_fetch_array($query_TelefonoId);
+	$idTelefono = $results['MAX(idTELEFONO)']+1;
+    $sql2 = "INSERT INTO TELEFONO(idTELEFONO, telefono) values('$idTelefono','$telefono')";
+    $sql3 = "INSERT INTO TELEFONO_X_USUARIO(idTELEFONO, nombreUsuario) values('$idTelefono','$correo')";
+
+    if(mysqli_query($conn, $sql) && mysqli_query($conn, $sql2) && mysqli_query($conn, $sql3)){
+
+    	$sqlUXA = "INSERT into USUARIO_X_ASADA (USUARIO_nombreUsuario, ASADA_idASADA) values ('$correo', 0)";
+
+    	if(mysqli_query($conn, $sqlUXA)){
+       		echo "si";
+       	}
+       	else{
+       		echo "no";
+       	}
+    }
+    else{
+       echo "no";
+   }
+} 
+else{
+    //echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+   echo "no";
+}
+
+
+
+mysqli_close ($conn); // Connection Closed.
+?>
+
+<div class="page-404 padding ptb-xs-40">
+    <div class="container">
+
+
+					<form class="login-form" onsubmit="return false">
+					  <h1><b>¡Bienvenido! Por favor digite sus datos para continuar: </b></h1>
+					  <input id = "nombre" type="text" placeholder="Nombre"/>
+					  <input id = "primerApellido" type="text" placeholder="Primer apellido"/>
+					  <input id = "segundoApellido" type="text" placeholder="Segundo apellido"/>
+					  <input id = "email" type="email" placeholder="Correo"/>
+					  <input id = "password" type="password" placeholder="Contraseña"/>
+					  <input id = "cedula" type="text" placeholder="Cédula"/>
+					  <input id = "telefono" type="number" placeholder="Teléfono"/>
+					 
+                      <select id = "provincia" onChange="llenarCantones()">
+					  </select>
+					  <select id = "canton" onChange="llenarDistritos()">
+					  </select>
+					  <select id = "distrito">
+					  </select>
+                        
+        
+					  <input type="text" id = "direccionExacta" placeholder="Dirección exacta"/>
+					  <br>
+					  <button name = "registrarse" id = "registrarse">Registrarse</button>
+		    
+					</form>
+				
+        
+        
+    </div>
+</div>
