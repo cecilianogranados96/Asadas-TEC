@@ -22,9 +22,6 @@ if(isset($_GET['pag'])){
 }else{
     include "view/general/inicio.php";    
 }
-
-
-
 if (file_exists("view/fotter.php")) {
     if(isset($_GET['pag'])){
         if($_GET['pag'] != 'general/test' and $_GET['pag'] != 'general/nuevo_pass')

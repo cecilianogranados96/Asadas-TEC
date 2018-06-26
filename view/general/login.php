@@ -1,4 +1,22 @@
-<?php 
+<?php
+
+
+require_once "controller/general/fb/fbsdk4-5.1.2/src/Facebook/autoload.php";
+
+$fb = new Facebook\Facebook([
+  'app_id' => $app_id,
+  'app_secret' => $app_secret,
+  'default_graph_version' => 'v2.2'
+  ]);
+
+$helper = $fb->getRedirectLoginHelper();
+
+$permissions = ['email']; // permisos
+$loginUrl = $helper->getLoginUrl($login_url, $permissions);
+
+
+
+
 
 if(isset($_GET['recuperar'])){
     $user =$_POST['email'];
@@ -8,7 +26,6 @@ if(isset($_GET['recuperar'])){
  
 	if ($result->num_rows != 0)
     {
-                   
                 enviar_email(
                     $usuario_datos['email'],
                     "Cambio de password",
@@ -29,8 +46,9 @@ if(isset($_GET['recuperar'])){
 
 ?>
 
-<div class="container">
-    <div class="row" style="margin-top:20px">
+<div class="page-404 padding ptb-xs-40">
+    <div class="container">
+        
         <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
         <?php if(isset($_GET['error_login'])){
             if ($_GET['error_login'] == 0)
@@ -138,8 +156,6 @@ if(isset($_GET['recuperar'])){
             </div>            
         </div>
         
-        
-        
-        
+
     </div>
 </div>

@@ -1,9 +1,9 @@
 <?php 
 //%%%%%%%%%%%%%%% Configuracion de base de datos %%%%%%%%%%%%%%%
-$host = "localhost";
-$usuario = "root";
-$contrasena = "";
-$base = "asadas-tec";    
+$host = "asadastec.tk";
+$usuario = "admin_asadas";
+$contrasena = "asadas123*";
+$base = "admin_asadas";    
 
 $link = new mysqli("$host", "$usuario", "$contrasena", "$base");
 
@@ -11,14 +11,14 @@ $link = new mysqli("$host", "$usuario", "$contrasena", "$base");
 $TAMANO_PAGINA = 10;
 
 //%%%%%%%%%%%%%%% Configuracion de login de facebook %%%%%%%%%%%%%%%
-$login_url = "http://radar.pet/controller/general/fb/callback.php";
-$app_id = "155350348609693";
-$app_secret = "2f43afdab4caf8b3e151e90e0e150c61";
+$login_url = "https://asadastec.tk/controller/general/fb/callback.php";
+$app_id = "480677335695670";
+$app_secret = "70ab41c4deeec1a65644119b3c2c071f";
 
 //%%%%%%%%%%%%%%% Configuracion generales %%%%%%%%%%%%%%%
 $redir =  $_SERVER['HTTP_HOST'];
 $link->set_charset("utf8");
 
-//%%%%%%%%%%%%%%% Configuracion generales %%%%%%%%%%%%%%%
-$key = "radar.pet";
+
+
 ?>

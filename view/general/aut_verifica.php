@@ -44,10 +44,12 @@ if (isset($_POST['email']) && isset($_POST['password']))
                     $result = mysqli_query($con,$query);
                     $datos = mysqli_fetch_array($result);
                     $tipo = $datos['tipo_usuario_id'];    
+                    $_SESSION["persona"] = $datos['id_persona'];
                     $_SESSION["tipo"] = $datos['tipo_usuario_id'];
+                    $_SESSION["asada"] = $datos['id_asada'];
                     
                     if ($tipo == 2 ){
-                        echo "<script languaje='JavaScript'>location.href='?pag=administrador/inicio';</script>";
+                        echo "<script languaje='JavaScript'>location.href='?pag=administrador/solicitudes';</script>";
                         exit;
                     }
                     if ($tipo == 3 ){
@@ -59,7 +61,7 @@ if (isset($_POST['email']) && isset($_POST['password']))
                         exit;
                     }
                    
-                    echo "<script languaje='JavaScript'>location.href='?pag=usuario/inicio';</script>";
+                    echo "<script languaje='JavaScript'>location.href='?pag=usuario/noticias';</script>";
                     exit;
                     
                 }        

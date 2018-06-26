@@ -4,53 +4,64 @@
             if (!isset($_SESSION['asada'])){ 
                 $menu = "
                 <li><a href='?pag=inicio'>Inicio</a></li>
-                <li><a href='?pag=usuario/inicio'>Mis trámites</a></li>
                 <li><a href='?pag=usuario/inicio'>Noticias</a></li>
+                <li><a href='?pag=usuario/inicio'>Mis trámites</a></li>
                 <li><a href='?pag=usuario/inicio'>Trámites</a></li>
-                <li><a href='?pag=usuario/inicio'>Sobre Nosotros</a></li>
                 <li><a href='?pag=usuario/inicio'>Contáctenos</a></li>";
             }else{
                 $menu = "
                 <li><a href='?pag=inicio'>Inicio</a></li>
-                <li><a href='?pag=usuario/mistramites'>Mis trámites</a></li>
                 <li><a href='?pag=usuario/noticias'>Noticias</a></li>
-                <li><a href='?pag=usuario/seleccionartramite'>Trámites</a></li>
-                <li><a href='?pag=usuario/sobreasada'>Sobre Nosotros</a></li>
-                <li><a href='?pag=usuario/contactoCliente'>Contáctenos</a></li>";
+                <li><a href='?pag=usuario/mistramites'>Mis trámites</a></li>
+                <li><a href='?pag=usuario/tramites'>Trámites</a></li>
+                <li><a href='?pag=usuario/contacto'>Contáctenos</a></li>";
             }
         }
         if ($_SESSION["tipo"] == 2){ //Administrador
             $menu = "
-                <li><a href='?pag=inicio'>Inicio</a></li>
-
-                 <li><a href='?pag=adm_tramitesPendientes'>Trámites</a> 
+                <li><a href='?pag=administrador/inicio'>Inicio</a></li>
+                 <li><a href='?pag=administrador/tramites'>Formularios</a> 
                     <ul class='sub-nav'>
-                        <li><a href='?pag=adm_crearFormulario'>Crear Trámite</a><li>
+                        <li><a href='?pag=administrador/crear_tramite'>Crear Formularios</a><li>
+                        <li><a href='?pag=administrador/tramites'>Ver Formularios</a><li>
+                     </ul>
+                 <li>
+                 <li><a href='?pag=administrador/solicitudes'>Solicitudes</a> 
+                    <ul class='sub-nav'>
+                        <li><a href='?pag=administrador/solicitudes&estado=1'>Pendientes</a><li>
+                        <li><a href='?pag=administrador/solicitudes&estado=2'>Aceptadas</a><li>
+                        <li><a href='?pag=administrador/solicitudes&estado=3'>Rechazadas</a><li>
                      </ul>
                  <li>
                  <li><a href='#'>Usuarios</a> 
                      <ul class='sub-nav'>
-                        <li><a href='?pag=adm_admins'>Administradores</a> <li>
-                        <li><a href='?pag=adm_fontaneros'>Fontaneros</a> <li>
+                        <li><a href='?pag=administrador/usuarios&tipo=2'>Administradores</a> <li>
+                        <li><a href='?pag=administrador/usuarios&tipo=4'>Fontaneros</a> <li>
                      </ul>
                  <li>
-                 <li><a href='?pag=adm_estaAsociacion'>Esta Asociación</a>
+                 <li><a href='?pag=administrador/info_asada'>Esta Asociación</a>
                     <ul class='sub-nav'>
-                        <li><a href='?pag=adm_juntaDirectiva'>Junta Directiva</a> <li>
+                        <li><a href='?pag=administrador/junta_directiva'>Junta Directiva</a> <li>
                      </ul>
                  <li>
-                 <li><a href='?pag=adm_noticias'>Noticias</a> <li>";
+                 <li><a href='?pag=administrador/noticias'>Noticias</a> <li>";
         }
         if ($_SESSION["tipo"] == 3){ //Master
             $menu = "
                     <li><a href='?pag=inicio'>Inicio</a></li>
-                    <li><a href='?pag=master/master_tramitesPendientes'>Tramites</a></li>
-                    <li><a href='?pag=master/fontaneros'>Fontaneros</a></li>
-                    <li><a href='?pag=master/administradores'>Administradores</a></li>
-                    <li><a href='?pag=master/master'>Master</a></li>
+                    <li><a href='?pag=master/tramites'>Tramites</a></li>
+                     <li><a href='#'>Usuarios</a> 
+                         <ul class='sub-nav'>
+                            <li><a href='?pag=master/usuarios&tipo=4'>Fontaneros</a></li>
+                            <li><a href='?pag=master/usuarios&tipo=2'>Administradores</a></li>
+                            <li><a href='?pag=master/usuarios&tipo=3'>Master</a></li>
+                         </ul>
+                     <li>
+                 
+
                     <li><a href='?pag=master/nueva_asada'>Crear Asada</a></li>";
         }
-
+        $menu .= "<li><a href='?pag=general/perfil'>Perfil</a></li>";
     }else{ //SIN LOGIN
         $menu = "<li><a href='index.php'>Inicio</a></li>";
     }
@@ -77,12 +88,11 @@
 		<link href="assets/css/nav_corporate.css" rel="stylesheet" type="text/css">
 		<link href="assets/css/style.css" rel="stylesheet" type="text/css">
 		<link href="assets/css/theme-color/default.css" rel="stylesheet" id="theme-color" type="text/css">
-        
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://selectize.github.io/selectize.js/css/selectize.default.css" data-theme="default">
-    <link rel="stylesheet" href="https://selectize.github.io/selectize.js/css/selectize.bootstrap3.css" data-theme="bootstrap3" disabled="disabled">
-    <script src="https://selectize.github.io/selectize.js/js/selectize.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/selectize.default.css" data-theme="default">
+    <link rel="stylesheet" href="assets/css/selectize.bootstrap3.css" data-theme="bootstrap3" disabled="disabled">
+    <script src="assets//js/selectize.js"></script>
 
 	</head>
 	<body class="full-intro background--dark">
@@ -110,14 +120,14 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-3 col-sm-12 col-xs-12">
-							<a href="index.php" class="logo"><img src="assets/images/isotipo.png" width="70%"> </a>
+							<a href="index.php" class="logo"><img src="assets/images/logo.png" width="50%" style="margin-left:30%;"> </a>
 						</div>
                         <div class="col-md-9 col-sm-12 col-xs-12">
 							<div class="header-contact-info">
 								<ul>
 									<li>
 										<div class="iocn-holder"><span class="fa fa-home"></span></div>
-										<div class="text-holder"><h6>Asadas Tec</h6><p>San José, Costa Rica</p></div>
+										<div class="text-holder"><h6>Asadas TEC</h6><p>San José, Costa Rica</p></div>
 									</li>
 									<li>
 										<div class="iocn-holder"><span class="fa fa-phone-square"></span></div>

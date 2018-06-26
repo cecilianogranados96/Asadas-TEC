@@ -22,7 +22,8 @@
             $destino =  "uploads/logos_asadas/".generarCodigo(6).'.'.$name[1];
             copy($file['tmp_name'],$destino);
         }
-             $querry = "INSERT INTO `asada`(
+             $querry = "     
+             INSERT INTO `asada`(
                 `nombre`, 
                 `cedulaJuridica`, 
                 `fechaFundacion`,
@@ -33,7 +34,9 @@
                 `logo`,
                 `horario`,
                 `id_distrito`,
-                redes
+                redes,
+                email,
+                telefono
             ) VALUES (
                 '".$_POST['nombre']."',
                 '".$_POST['cedulaJuridica']."',
@@ -45,7 +48,9 @@
                 '".$destino."',
                 '".$_POST['horario']."',
                 '".$_POST['id_distrito']."',
-                '".$_POST['facebook']."'
+                '".$_POST['facebook']."',
+                '".$_POST['email']."',
+                '".$_POST['telefono']."'
             )
             ";
             mysqli_query($link,$querry);
@@ -103,7 +108,7 @@
             <div class="form-group">
               <label class="col-md-4 control-label" for="textinput">Digite el correo:</label>  
               <div class="col-md-4">
-                  <input name="correo" type="email" placeholder="Correo electrónico" class="form-control input-md" required>
+                  <input name="email" type="email" placeholder="Correo electrónico" class="form-control input-md" required>
               </div>
             </div>
             <div class="form-group">
@@ -172,8 +177,7 @@
             date: true,
             datePattern: ['d','m','Y']
         });
-             
-
+        
     </script>
 
     </div>
