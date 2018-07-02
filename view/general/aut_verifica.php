@@ -57,7 +57,7 @@ if (isset($_POST['email']) && isset($_POST['password']))
                         exit;
                     }
                     if ($tipo == 4 ){
-                        echo "<script languaje='JavaScript'>location.href='?pag=fontanero/inicio';</script>";
+                        echo "<script languaje='JavaScript'>location.href='?pag=fontanero/ordenes&estado=1';</script>";
                         exit;
                     }
                    

@@ -1,6 +1,32 @@
 <div class="page-404 padding ptb-xs-40">
     <div class="container">
             <center><h1>Solicitudes</h1></center>
+            <table class="table">
+                <tr class="warning">
+                    <td>
+                        <center>
+                            <a href="?pag=<?php echo $_GET['pag']; ?>" class="btn btn-warning">Todas</a>
+                        </center>
+                    </td>
+                    <td>
+                        <center>
+                            <a href="?pag=<?php echo $_GET['pag']; ?>&estado=1" class="btn btn-info">Pendientes</a>
+                        </center>
+                    </td>
+                    <td>
+                        <center>
+                            <a href="?pag=<?php echo $_GET['pag']; ?>&estado=2" class="btn btn-success">Aceptadas</a>
+                        </center>
+                    </td>
+                    <td>
+                        <center>
+                            <a href="?pag=<?php echo $_GET['pag']; ?>&estado=3" class="btn btn-danger" >Rechazadas</a>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        
+        
             <table class="table" >
               <tr class="warning">
                 <td><center><b>Número</b></center></td>
@@ -43,5 +69,3 @@
             </table>
             </div>
 </div>
-			
-

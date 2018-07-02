@@ -87,7 +87,7 @@
                   </select>
                   <script>
                     $('#select-beast').selectize({
-                        create: true,
+                        create: false,
                         sortField: 'text'
                     });
                   </script>

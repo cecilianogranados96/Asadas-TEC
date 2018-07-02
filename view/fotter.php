@@ -1,5 +1,4 @@
-
-			<footer class="footer ">
+			<footer class="footer">
 				<div class="copyright">
 					<div class="container">
 						<p>
@@ -21,8 +20,6 @@
 		<script src="assets/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
 		<script src="assets/js/mediaelement-and-player.min.js" type="text/javascript"></script>
 		<script src="assets/js/mail.js" type="text/javascript"></script>
-
 		<script src="assets/js/custom.js" type="text/javascript"></script>
-
 	</body>
 </html>

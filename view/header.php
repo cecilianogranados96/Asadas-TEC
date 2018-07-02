@@ -1,66 +1,68 @@
 <?php 
     if(isset($_SESSION["tipo"])){
         if ($_SESSION["tipo"] == 1){ //Usuario
-            if (!isset($_SESSION['asada'])){ 
-                $menu = "
-                <li><a href='?pag=inicio'>Inicio</a></li>
-                <li><a href='?pag=usuario/inicio'>Noticias</a></li>
-                <li><a href='?pag=usuario/inicio'>Mis trámites</a></li>
-                <li><a href='?pag=usuario/inicio'>Trámites</a></li>
-                <li><a href='?pag=usuario/inicio'>Contáctenos</a></li>";
-            }else{
-                $menu = "
-                <li><a href='?pag=inicio'>Inicio</a></li>
-                <li><a href='?pag=usuario/noticias'>Noticias</a></li>
-                <li><a href='?pag=usuario/mistramites'>Mis trámites</a></li>
-                <li><a href='?pag=usuario/tramites'>Trámites</a></li>
-                <li><a href='?pag=usuario/contacto'>Contáctenos</a></li>";
-            }
+            $menu = "
+            <li><a href='?pag=inicio'>Inicio</a></li>
+            <li><a href='?pag=usuario/noticias'>Noticias</a></li>
+            <li><a href='?pag=usuario/mistramites'>Mis trámites</a></li>
+            <li><a href='?pag=usuario/tramites'>Trámites</a></li>
+            <li><a href='?pag=usuario/contacto'>Contáctenos</a></li>";
         }
         if ($_SESSION["tipo"] == 2){ //Administrador
             $menu = "
-                <li><a href='?pag=administrador/inicio'>Inicio</a></li>
-                 <li><a href='?pag=administrador/tramites'>Formularios</a> 
-                    <ul class='sub-nav'>
-                        <li><a href='?pag=administrador/crear_tramite'>Crear Formularios</a><li>
-                        <li><a href='?pag=administrador/tramites'>Ver Formularios</a><li>
-                     </ul>
-                 <li>
-                 <li><a href='?pag=administrador/solicitudes'>Solicitudes</a> 
-                    <ul class='sub-nav'>
-                        <li><a href='?pag=administrador/solicitudes&estado=1'>Pendientes</a><li>
-                        <li><a href='?pag=administrador/solicitudes&estado=2'>Aceptadas</a><li>
-                        <li><a href='?pag=administrador/solicitudes&estado=3'>Rechazadas</a><li>
-                     </ul>
-                 <li>
-                 <li><a href='#'>Usuarios</a> 
-                     <ul class='sub-nav'>
-                        <li><a href='?pag=administrador/usuarios&tipo=2'>Administradores</a> <li>
-                        <li><a href='?pag=administrador/usuarios&tipo=4'>Fontaneros</a> <li>
-                     </ul>
-                 <li>
-                 <li><a href='?pag=administrador/info_asada'>Esta Asociación</a>
-                    <ul class='sub-nav'>
-                        <li><a href='?pag=administrador/junta_directiva'>Junta Directiva</a> <li>
-                     </ul>
-                 <li>
-                 <li><a href='?pag=administrador/noticias'>Noticias</a> <li>";
+            <li><a href='?pag=administrador/inicio'>Inicio</a></li>
+             <li><a href='?pag=administrador/tramites'>Formularios</a> 
+                <ul class='sub-nav'>
+                    <li><a href='?pag=administrador/crear_tramite'>Crear Formularios</a><li>
+                    <li><a href='?pag=administrador/tramites'>Ver Formularios</a><li>
+                 </ul>
+             <li>
+             <li><a href='?pag=administrador/solicitudes'>Solicitudes</a> 
+                <ul class='sub-nav'>
+                    <li><a href='?pag=administrador/solicitudes&estado=1'>Solicitudes</a><li>
+                    <li><a href='?pag=administrador/ordenes_trabajo&estado=1'>Ordenes de trabajo</a><li>
+                 </ul>
+             <li>
+             <li><a href='#'>Usuarios</a> 
+                 <ul class='sub-nav'>
+                    <li><a href='?pag=administrador/usuarios&tipo=2'>Administradores</a><li>
+
+                    <li><a href='?pag=administrador/usuarios&tipo=4'>Fontaneros</a> 
+                        <ul class='sub-nav'>
+                            <li><a href='?pag=administrador/usuarios&tipo=4'>Inventario Fontaneros</a><li>
+                         </ul>
+                     <li>
+                 </ul>
+             <li>
+             <li><a href='?pag=administrador/info_asada'>Esta Asociación</a>
+                <ul class='sub-nav'>
+                    <li><a href='?pag=administrador/junta_directiva'>Junta Directiva</a><li>
+                    <li><a href='?pag=administrador/noticias'>Noticias</a><li>
+                    <li><a href='?pag=administrador/productos'>Productos de inventario</a><li>
+                 </ul>
+             <li>
+             ";
         }
         if ($_SESSION["tipo"] == 3){ //Master
             $menu = "
-                    <li><a href='?pag=inicio'>Inicio</a></li>
-                    <li><a href='?pag=master/tramites'>Tramites</a></li>
-                     <li><a href='#'>Usuarios</a> 
-                         <ul class='sub-nav'>
-                            <li><a href='?pag=master/usuarios&tipo=4'>Fontaneros</a></li>
-                            <li><a href='?pag=master/usuarios&tipo=2'>Administradores</a></li>
-                            <li><a href='?pag=master/usuarios&tipo=3'>Master</a></li>
-                         </ul>
-                     <li>
-                 
-
-                    <li><a href='?pag=master/nueva_asada'>Crear Asada</a></li>";
+            <li><a href='?pag=inicio'>Inicio</a></li>
+            <li><a href='?pag=master/tramites'>Tramites</a></li>
+             <li><a href='#'>Usuarios</a> 
+                 <ul class='sub-nav'>
+                    <li><a href='?pag=master/usuarios&tipo=4'>Fontaneros</a></li>
+                    <li><a href='?pag=master/usuarios&tipo=2'>Administradores</a></li>
+                    <li><a href='?pag=master/usuarios&tipo=3'>Master</a></li>
+                 </ul>
+             <li>
+            <li><a href='?pag=master/nueva_asada'>Crear Asada</a></li>";
         }
+        if ($_SESSION["tipo"] == 4){ //Fontanero
+            $menu = "
+            <li><a href='?pag=inicio'>Inicio</a></li>
+            <li><a href='?pag=fontanero/ordenes&estado=1'>Ordenes</a> <li>
+            <li><a href='?pag=fontanero/inventario'>Inventario</a></li>";
+        }
+        
         $menu .= "<li><a href='?pag=general/perfil'>Perfil</a></li>";
     }else{ //SIN LOGIN
         $menu = "<li><a href='index.php'>Inicio</a></li>";
@@ -81,19 +83,13 @@
 		<link href="assets/css/mediaelementplayer.css" rel="stylesheet" type="text/css">
 		<link href="assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css">
 		<script src="assets/js/jquery-1.12.4.min.js" type="text/javascript"></script>
-
-
-
-
-		<link href="assets/css/nav_corporate.css" rel="stylesheet" type="text/css">
-		<link href="assets/css/style.css" rel="stylesheet" type="text/css">
-		<link href="assets/css/theme-color/default.css" rel="stylesheet" id="theme-color" type="text/css">
-
-    <script src="assets/js/jquery.min.js"></script>
-    <link rel="stylesheet" href="assets/css/selectize.default.css" data-theme="default">
-    <link rel="stylesheet" href="assets/css/selectize.bootstrap3.css" data-theme="bootstrap3" disabled="disabled">
-    <script src="assets//js/selectize.js"></script>
-
+        <link href="assets/css/nav_corporate.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/theme-color/default.css" rel="stylesheet" id="theme-color" type="text/css">
+        <script src="assets/js/jquery.min.js"></script>
+        <link rel="stylesheet" href="assets/css/selectize.default.css" data-theme="default">
+        <link rel="stylesheet" href="assets/css/selectize.bootstrap3.css" data-theme="bootstrap3" disabled="disabled">
+        <script src="assets//js/selectize.js"></script>
 	</head>
 	<body class="full-intro background--dark">
 		<!--loader
@@ -143,7 +139,6 @@
 					</div>
 				</div>
 			</header>
-		
 			<!--Start mainmenu area-->
 			<section class="mainmenu-area">
 				<div class="container">

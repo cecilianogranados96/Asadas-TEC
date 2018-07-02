@@ -6,6 +6,7 @@
             $consulta = "SELECT 
                 persona.id_persona,
                 persona.cedula,
+                persona.email,
                 persona.nombre,
                 persona.telefono,
                 persona.primerApellido,
@@ -42,6 +43,7 @@
             $querry = "
              UPDATE `persona` SET 
                 `cedula`='".$_POST['cedula']."',
+                `email`='".$_POST['email']."',
                 `nombre`='".$_POST['nombre']."',
                 `primerApellido`='".$_POST['primerApellido']."',
                 `segundoApellido`='".$_POST['segundoApellido']."',
@@ -83,6 +85,12 @@
                       <label class="col-md-4 control-label" for="textinput">Segundo apellido</label>  
                       <div class="col-md-4">
                           <input name="segundoApellido" type="text" placeholder="Segundo apellido" value="<?php echo $datos['segundoApellido']; ?>" class="form-control input-md" required/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="textinput">Email</label>  
+                      <div class="col-md-4">
+                          <input name="email" type="email" placeholder="Email" value="<?php echo $datos['email']; ?>" class="form-control input-md" required/>
                       </div>
                     </div>
                     <div class="form-group">
@@ -165,8 +173,6 @@
             date: true,
             datePattern: ['d','m','Y']
         });
-             
-
     </script>
 
     </div>

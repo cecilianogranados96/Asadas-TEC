@@ -252,6 +252,11 @@
                    
                     <th>Correo electrónico</th>
                     <th>Acciones</th>
+                      <?php 
+                     if ($tipo == 4){
+                        echo "<th>Inventario</th>";
+                        }
+                      ?>
                   </tr>
                 <?php 
                     $sth = mysqli_query($link,"SELECT persona.nombre,primerApellido,segundoApellido,persona.id_persona,usuario.id_asada, asada.nombre as asada , usuario.usuario, usuario.id_usuario from persona,usuario,asada WHERE persona.id_persona = usuario.id_persona and asada.id_asada = usuario.id_asada and usuario.tipo_usuario_id = $tipo and usuario.id_asada = '".$_SESSION["asada"]."' ");
@@ -264,7 +269,14 @@
                             <th>
                                 <a href="?pag='.$_GET['pag'].'&tipo='.$tipo.'&editar='.$r['id_usuario'].'&cerrar=1"  class="btn btn-warning" href="#">Editar</a>
                                 <a href="?pag='.$_GET['pag'].'&tipo='.$tipo.'&eliminar='.$r['id_persona'].'&cerrar=1" onclick="javascript: return confirm('."'".'¿Estas seguro?'."'".');"  class="btn btn-danger" href="#">Eliminar</a>
-                            </th>
+                            </th>';
+                           if ($tipo == 4){
+                        echo '<th>
+                        <a href="?pag=administrador/inventario&fontanero='.$r['id_usuario'].'"  class="btn btn-info" href="#">Manejar inventario</a>
+                        </th>';
+                        }
+                        
+                          echo ' 
                           </tr>';
                     }
                 ?>
