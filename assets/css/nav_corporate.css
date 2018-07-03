@@ -821,14 +821,23 @@ header ul, header li, .mainmenu-area li {
 @media only screen and (max-width: 991px) and (min-width: 767px) {
 
 	.header-contact-info ul li {
+        display: none !important;
 		padding-top: 15px;
 		border: none;
 		margin-right: 0;
 		padding-right: 0;
 	}
-	.header-area .logo img {
-		position: relative;
+
+    .header-area .logo img {
+    position: relative;
+    margin-left: 1% !important;
+    width: 20%;
+    margin-top: 1%;
+    margin-bottom: -5%;
 	}
+    
+    
+    
 }
 @media only screen and (max-width: 767px) {
 

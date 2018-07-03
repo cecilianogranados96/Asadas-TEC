@@ -3,13 +3,24 @@
         <?php 
             if (isset($_POST["nombre"])){
                 $x = 0;
-                $array_general = array();        
+                $array_general = array();
+                
+                
+                foreach($_FILES as $file){
+                    $name = $file['name'];
+                    $name = str_replace(' ', '', $name);
+                    $name = explode('.', $name);
+                    $destino =  "uploads/tramites/".substr($file['tmp_name'], -6).'.'.$name[1];
+                    copy($file['tmp_name'],$destino);
+                }
+                
+                
                 foreach($_POST["nombre"] as $key=>$value)
                 {
                     $array = array();
                     $array += [ "nombre" => $_POST["nombre"][$x] ];
                     $array += [ "tipo" => $_POST["tipo"][$x] ];
-
+                    $array += [ "requerido" => $_POST["requerido"][$x] ];
 
                     if (isset($_POST["campo"][$x])){
                         $array += [ "campo" => $_POST["campo"][$x] ];
@@ -40,7 +51,7 @@
                     '".$_POST['nombre_tramite']."',
                     '".$_POST['descripcion']."',
                     '".$_POST['requisitos']."',
-                    '',
+                    '$destino',
                     '".json_encode($array_general,JSON_UNESCAPED_UNICODE)."',
                     '".$_SESSION["asada"]."'
                 )";
@@ -92,6 +103,9 @@
                         <center><b>Predeterminado</b></center>
                     </td>
                     <td>
+                        <center><b>Requerido</b></center>
+                    </td>
+                    <td>
                         <center><b>Añadir Campo </b></center>
                     </td>
                 </tr>
@@ -102,9 +116,11 @@
                     </td>
                     <td>
                         <select id="tipo1" name="tipo[]" class="tipo form-control input-md" onchange="verificar(this);" required>
-                           <option value="">Seleccionar</option>
-                           <option value="1">Campo de texto</option>
-                           <option value="2">Seleccionable</option>
+                            <option value="">Seleccionar</option>
+                            <option value="1">Campo de texto</option>
+                            <option value="2">Seleccionable</option>
+                            <option value="3">Texto</option>
+                            <option value="4">Archivo</option>
                         </select>
                     </td>
                     <td>
@@ -122,9 +138,16 @@
                            <option value="asada">Asada por defecto</option>
                         </select>
                     </td>
+                    
+                    <td>
+                        <select id="requerido1" name="requerido[]" class="form-control input-md" >
+                           <option value="1">Si</option>
+                           <option value="2">No</option>
+                        </select>
+                    </td>
+                    
                     <td>    
                         <button class="clone btn btn-success">Añadir Campo</button> 
-                        <button class="remove btn btn-danger">Eliminar</button>
                     </td>
                 </tr>
             </table>
@@ -142,15 +165,21 @@
         var regex = /(\d+)/g;
         var name= $(att).attr("id");
         
-        if($(att).val() == 1){ // Texto
-    
+        if($(att).val() == 1){ // Campo
             $('#campo'+name.match(regex)[0]).removeAttr("readonly");
             $('#opciones'+name.match(regex)[0]).attr("readonly","readonly");
-        }else {
-            if($(att).val() == 2){ //Seleccionable
+        }
+        if($(att).val() == 2){ //Seleccionable
                 $('#opciones'+name.match(regex)[0]).removeAttr("readonly");
                 $('#campo'+name.match(regex)[0]).attr("readonly","readonly");
-            }
+        }
+        if($(att).val() == 3){ // Texto
+            $('#campo'+name.match(regex)[0]).removeAttr("readonly");
+            $('#opciones'+name.match(regex)[0]).attr("readonly","readonly");
+        }
+        if($(att).val() == 4){ // Archivo
+            $('#campo'+name.match(regex)[0]).attr("readonly","readonly");
+            $('#opciones'+name.match(regex)[0]).attr("readonly","readonly");
         }
         
 
@@ -174,8 +203,7 @@ $(window).load(function(){
                     this.id = match[1] + (cloneIndex);
                 }
             })
-            .on('click', 'button.clone', clone)
-            .on('click', 'button.remove', remove);
+            .on('click', 'button.clone', clone);
         cloneIndex++;
     }
 
@@ -188,7 +216,7 @@ $(window).load(function(){
 
     $("button.clone").on("click", clone);
 
-    $("button.remove").on("click", remove);
+
 
     });
 

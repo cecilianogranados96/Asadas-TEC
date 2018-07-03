@@ -2,9 +2,40 @@
     <div class="container">
         <?php 
         
-        if(isset($_GET['nuevo'])){
-            $json = json_encode($_POST,JSON_UNESCAPED_UNICODE);
-            echo $querry = "INSERT INTO `formulario`(`id_tramite`, `id_usuario`, `respuesta`) VALUES ('".$_GET['tramite']."','".$_SESSION["usuario"]."','".$json."')";
+        if(isset($_GET['nuevo'])){        
+            if(isset($_FILES)){
+                foreach($_FILES as $file){
+                    $name = $file['name'];
+                    $name = str_replace(' ', '', $name);
+                    $name = explode('.', $name);
+                    $destino =  "uploads/formulario/".substr($file['tmp_name'], -6).'.'.$name[1];
+                    copy($file['tmp_name'],$destino);
+                }
+            }
+            $x = 1;
+            $array = array();
+            foreach($_POST as $file){
+                if($file == "file"){
+                    $name = $_FILES[$x]['name'];
+                    $name = str_replace(' ', '', $name);
+                    $name = explode('.', $name);
+                    $array += [$x => "uploads/formulario/".substr($_FILES[$x]['tmp_name'], -6).'.'.$name[1] ];
+                }else{
+                     $array += [$x => $file];
+                }
+                $x++;
+            }
+            
+            
+            $json = json_encode($array,JSON_UNESCAPED_UNICODE);
+            
+            
+
+            
+            $querry = "INSERT INTO `formulario`(`id_tramite`, `id_usuario`, `respuesta`) VALUES ('".$_GET['tramite']."','".$_SESSION["usuario"]."','".$json."')";
+            
+            
+            
             mysqli_query($link,$querry);
             echo "<script>alert('Tramite guardado con éxito');location.href='?pag=usuario/mistramites';</script>";
         }
@@ -24,31 +55,48 @@
                 $identificador = 0;
                 foreach ($array as $i => $value) {
                     $identificador ++;
-                    if ($array[$i]["tipo"] == 1){
+                    $value= "";
+                    $requerido= "";
+                    if ($array[$i]["requerido"] == 1){
+                            $requerido = "required";
+                    }
+                    
+                    
+                    echo "<div class='form-group'> \n
+                                <label class='col-md-4 control-label'>".$array[$i]["nombre"]."</label> \n
+                                <div class='col-md-4'> \n";
+                    
+                    if ($array[$i]["tipo"] == 1){ //CAMPO DE TEXTO
                         if ($array[$i]["campo"] != "ninguno"){
                             $value = "value = '".$datos[$array[$i]["campo"]]."'";
-                        }else{
-                            $value = "";
                         }
-                        echo "
-                            <div class='form-group'>
-                                <label class='col-md-4 control-label'>".$array[$i]["nombre"]."</label>
-                                <div class='col-md-4'>
-                                    <input type='text' name='".$identificador."' class='form-control input-md'  $value >
-                                </div>
-                            </div>";
-                    }else{
-                        echo "
-                            <div class='form-group'>
-                                <label class='col-md-4 control-label'>".$array[$i]["nombre"]."</label>
-                                <div class='col-md-4'> <select  name='".$identificador."' class='form-control'>
-                                <option value=''>Seleccionar</option>
-                                ";
-                        foreach ($array[$i]["opciones"] as $valor) {
-                                echo "<option value='$valor'>$valor</option>";
-                        }                           
-                        echo " </select></div></div>";
+                        echo "<input type='text' name='".$identificador."' class='form-control input-md'  $value  $requerido> \n";
                     }
+                    
+                    if ($array[$i]["tipo"] == 2){ //Seleccionable
+                        echo "<select  name='".$identificador."' class='form-control' $requerido >\n<option value=''>Seleccionar</option>\n";
+                        foreach ($array[$i]["opciones"] as $valor) {
+                                echo "<option value='$valor'>$valor</option>\n";
+                        }                           
+                        echo " </select>";
+                    }
+                    
+                    if ($array[$i]["tipo"] == 3){ //Texto
+                        if ($array[$i]["campo"] != "ninguno"){
+                            $value = "".$datos[$array[$i]["campo"]]."";
+                        }
+                        echo "<textarea name='".$identificador."' class='form-control' $requerido >$value</textarea>\n";
+                    }
+                    
+                    if ($array[$i]["tipo"] == 4){ //Archivo
+                        echo "<input type='file' name='".$identificador."' class='form-control input-md' $requerido>\n";
+                        echo "<input type='text' name='".$identificador."' style='display:none;' value='file' >\n";
+                    }
+                    
+                    echo "</div>\n
+                    </div>\n\n";
+                    
+                    
                 }
           ?>
           <center><input type='submit' value='Enviar' class="btn btn-success"/></center>

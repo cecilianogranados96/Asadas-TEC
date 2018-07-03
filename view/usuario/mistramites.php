@@ -11,7 +11,7 @@
 					  </tr>
 				
                      <?php 
-                        $sth = mysqli_query($link,"call Get_Formulario_Usuario('".$_SESSION["usuario"]."')");
+                        $sth = mysqli_query($link,"SELECT formulario.fecha,tramite.nombre as tramite, estado_solicitud.nombre as estado_solicitud, formulario.id_formulario, formulario.id_estado_solicitud FROM `formulario`,tramite,estado_solicitud WHERE formulario.id_tramite = tramite.id_tramite and estado_solicitud.id_estado_solicitud = formulario.id_estado_solicitud and formulario.id_usuario = '".$_SESSION["usuario"]."' ORDER by formulario.fecha DESC");
                         while($r = mysqli_fetch_assoc($sth)) {
                             
                             if ($r['id_estado_solicitud'] == 1){

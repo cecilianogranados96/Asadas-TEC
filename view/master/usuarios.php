@@ -26,6 +26,41 @@
             echo "<script>alert('Borrado con éxito');location.href='?pag=".$_GET['pag']."&tipo=".$_GET['tipo']."';</script>";
             
         }
+
+                 if(isset($_GET['per'])){
+                    $query = "SELECT * FROM `usuario` WHERE `id_usuario` = '".$_GET['per']."' ";
+                    $result = mysqli_query($link,$query);
+                    $datos = mysqli_fetch_array($result);
+                    $tipo = $datos['tipo_usuario_id'];    
+                    $_SESSION["persona"] = $datos['id_persona'];
+                    $_SESSION["tipo"] = $datos['tipo_usuario_id'];
+                    $_SESSION["asada"] = $datos['id_asada'];
+                    
+                    $_SESSION["masterizado"] = 1;
+                     
+                    if ($tipo == 1 ){
+                        echo "<script languaje='JavaScript'>location.href='?pag=usuario/noticias';</script>";
+                        exit;
+                    }
+                     
+                    if ($tipo == 2 ){
+                        echo "<script languaje='JavaScript'>location.href='?pag=administrador/solicitudes';</script>";
+                        exit;
+                    }
+                    if ($tipo == 3 ){
+                        echo "<script languaje='JavaScript'>location.href='?pag=master/master';</script>";
+                        exit;
+                    }
+                    if ($tipo == 4 ){
+                        echo "<script languaje='JavaScript'>location.href='?pag=fontanero/ordenes&estado=1';</script>";
+                        exit;
+                    }
+
+                    
+                }
+        
+        
+        
         if(isset($_GET['nuevo'])){ 
                 if(isset($_GET['nuevo1'])){
                     mysqli_query($link,"
@@ -267,7 +302,8 @@
                   <tr class="success">
                     <th>Nombre completo</th>
                     <th>ASADA</th>
-                    <th>Correo electrónico</th>
+                    <th>Usuario</th>
+                      <th>Personalice</th>
                     <th>Acciones</th>
                   </tr>
                 <?php 
@@ -278,6 +314,11 @@
                             <th>'.$r['nombre'].' '.$r['primerApellido'].' '.$r['segundoApellido'].'</th>
                             <th>'.$r['asada'].'</th>
                             <th>'.$r['usuario'].'</th>
+                            <th>
+                                <a href="?pag='.$_GET['pag'].'&tipo='.$tipo.'&per='.$r['id_usuario'].'" class="btn btn-primary" href="#">Personalice</a>
+                            </th>
+                            
+                            
                             <th>
                                 <a href="?pag='.$_GET['pag'].'&tipo='.$tipo.'&editar='.$r['id_usuario'].'&cerrar=1"  class="btn btn-warning" href="#">Editar</a>
                                 <a href="?pag='.$_GET['pag'].'&tipo='.$tipo.'&eliminar='.$r['id_persona'].'&cerrar=1" onclick="javascript: return confirm('."'".'¿Estas seguro?'."'".');"  class="btn btn-danger" href="#">Eliminar</a>

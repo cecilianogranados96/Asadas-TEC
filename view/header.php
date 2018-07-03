@@ -3,6 +3,7 @@
         if ($_SESSION["tipo"] == 1){ //Usuario
             $menu = "
             <li><a href='?pag=inicio'>Inicio</a></li>
+            <li><a href='?pag=usuario/cambiar_asada'>Cambiar Asada</a></li>
             <li><a href='?pag=usuario/noticias'>Noticias</a></li>
             <li><a href='?pag=usuario/mistramites'>Mis trámites</a></li>
             <li><a href='?pag=usuario/tramites'>Trámites</a></li>
@@ -46,14 +47,9 @@
         if ($_SESSION["tipo"] == 3){ //Master
             $menu = "
             <li><a href='?pag=inicio'>Inicio</a></li>
-            <li><a href='?pag=master/tramites'>Tramites</a></li>
-             <li><a href='#'>Usuarios</a> 
-                 <ul class='sub-nav'>
-                    <li><a href='?pag=master/usuarios&tipo=4'>Fontaneros</a></li>
-                    <li><a href='?pag=master/usuarios&tipo=2'>Administradores</a></li>
-                    <li><a href='?pag=master/usuarios&tipo=3'>Master</a></li>
-                 </ul>
-             <li>
+            <li><a href='?pag=master/usuarios&tipo=3'>Master</a></li>
+            <li><a href='?pag=master/usuarios&tipo=2'>Administradores</a></li>
+            <li><a href='?pag=master/usuarios&tipo=4'>Fontaneros</a></li>
             <li><a href='?pag=master/nueva_asada'>Crear Asada</a></li>";
         }
         if ($_SESSION["tipo"] == 4){ //Fontanero
@@ -85,7 +81,6 @@
 		<script src="assets/js/jquery-1.12.4.min.js" type="text/javascript"></script>
         <link href="assets/css/nav_corporate.css" rel="stylesheet" type="text/css">
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/theme-color/default.css" rel="stylesheet" id="theme-color" type="text/css">
         <script src="assets/js/jquery.min.js"></script>
         <link rel="stylesheet" href="assets/css/selectize.default.css" data-theme="default">
         <link rel="stylesheet" href="assets/css/selectize.bootstrap3.css" data-theme="bootstrap3" disabled="disabled">
@@ -109,8 +104,6 @@
 				<div class="sk-circle12 sk-child"></div>
 			</div>
 		</div>-->
-		<!--loader-->
-		<!-- Site Wraper -->
 		<div class="wrapper">
 				<header class="header-area">
 				<div class="container">
@@ -121,18 +114,36 @@
                         <div class="col-md-9 col-sm-12 col-xs-12">
 							<div class="header-contact-info">
 								<ul>
-									<li>
-										<div class="iocn-holder"><span class="fa fa-home"></span></div>
-										<div class="text-holder"><h6>Asadas TEC</h6><p>San José, Costa Rica</p></div>
-									</li>
-									<li>
-										<div class="iocn-holder"><span class="fa fa-phone-square"></span></div>
-										<div class="text-holder"><h6>Soporte</h6><p>+506 2222-2222</p></div>
-									</li>
+                                    <?php 
+                                    if (isset($_SESSION["asada"]) and $_SESSION["tipo"] != 3){
+                                        $sth1 = mysqli_query($link,"Call Get_Asada('".$_SESSION["asada"]."')");
+                                        $nombre = mysqli_fetch_assoc($sth1); 
+                                        mysqli_next_result($link);
+                                        if ($_SESSION["tipo"] != 3){
+                                    ?>
+                                        <li>
+                                            <div class="iocn-holder"><span class="fa fa-home"></span></div>
+                                            <div class="text-holder"><h6>Asada</h6><a href="#"><p><?php echo str_replace("ASADA",'', $nombre['nombre']); ?></p></a></div>
+                                        </li>
+                                        <li>
+                                            <div class="iocn-holder"><span class="fa fa-phone-square"></span></div>
+                                            <div class="text-holder"><h6>Soporte</h6><p>+506 <?php echo $nombre['telefono']; ?></p></div>
+                                        </li>
+                                    <?php } }else{ ?>
+                                        <li>
+                                            <div class="iocn-holder"><span class="fa fa-home"></span></div>
+                                            <div class="text-holder"><h6>Asada</h6><a href="#"><p>Tecnológico de Costa Rica</p></a></div>
+                                        </li>
+                                        <li>
+                                            <div class="iocn-holder"><span class="fa fa-phone-square"></span></div>
+                                            <div class="text-holder"><h6>Soporte</h6><p>+506 2222-2222</p></div>
+                                        </li>
+                                    <?php } ?>
 									<li>
 										<div class="iocn-holder"><span class="fa fa-envelope"></span></div>
 										<div class="text-holder"><h6>Email</h6><a href="#"><p>info@asadascr.com</p></a></div>
 									</li>
+
 								</ul>
 							</div>
 						</div>
@@ -169,7 +180,17 @@
                                 if(!isset($_SESSION["tipo"])){
                                     echo "<div class='link_btn float_right'><a href='?pag=general/login' class='thm-btn bg-clr1'>Iniciar Session</a></div>";
                                 }else{
-                                    echo "<div class='link_btn float_right'><a href='?pag=general/salir' class='thm-btn bg-clr1'>Salir</a></div>";
+                                    if (isset($_SESSION["masterizado"])){
+                                        if ($_SESSION["masterizado"] == 1){
+                                            echo "<div class='link_btn float_right'><a href='?pag=general/salir' class='thm-btn bg-clr1' style='background-color: #d9534f !important;border-color: #d43f3a;'>Salir (Master)</a></div>";
+                                        }else{
+                                            echo "<div class='link_btn float_right'><a href='?pag=general/salir' class='thm-btn bg-clr1'>Salir</a></div>";
+                                        }
+                                    }else{
+                                        echo "<div class='link_btn float_right'><a href='?pag=general/salir' class='thm-btn bg-clr1'>Salir</a></div>";
+                                    }
+                                    
+                                
                                 }
                                 ?>
 							</div>

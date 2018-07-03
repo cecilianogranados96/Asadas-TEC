@@ -2,7 +2,8 @@
 				<div class="copyright">
 					<div class="container">
 						<p>
-							<a>Asadas TEC</a>. <?php echo date('Y'); ?> © Todos los derechos reservados.
+							<a>Asadas TEC</a>. <?php echo date('Y'); ?> © Todos los derechos reservados.<br>
+                            Tecnológico de Costa Rica
 						</p>
 					</div>
 				</div>

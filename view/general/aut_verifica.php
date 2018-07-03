@@ -48,12 +48,14 @@ if (isset($_POST['email']) && isset($_POST['password']))
                     $_SESSION["tipo"] = $datos['tipo_usuario_id'];
                     $_SESSION["asada"] = $datos['id_asada'];
                     
+                    $_SESSION["usuario_master"] = $usuario_datos['id_usuario'];
+                    
                     if ($tipo == 2 ){
                         echo "<script languaje='JavaScript'>location.href='?pag=administrador/solicitudes';</script>";
                         exit;
                     }
                     if ($tipo == 3 ){
-                        echo "<script languaje='JavaScript'>location.href='?pag=master/master';</script>";
+                        echo "<script languaje='JavaScript'>location.href='?pag=master/usuarios&tipo=2';</script>";
                         exit;
                     }
                     if ($tipo == 4 ){

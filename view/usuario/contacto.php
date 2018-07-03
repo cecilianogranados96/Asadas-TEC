@@ -6,8 +6,8 @@
         ?>
         <center>
             <h1>Contacto</h1>
-        </center>
-        <table class="table">
+        </center><hr><br>
+        <table>
             <tr>
 
                 <td>
@@ -41,10 +41,6 @@
             </tr>
         </table>
         <div class="row">
-
-
-
-
             <div class="col-sm-6 pb-xs-30">
                 <h4>Misión</h4>
                 <ul class="list">
@@ -52,7 +48,6 @@
                         <?php echo $r['mision']; ?>
                     </li>
                 </ul>
-
             </div>
             <div class="col-sm-6">
                 <h4>Visión</h4>
@@ -62,8 +57,6 @@
                     </li>
                 </ul>
             </div>
-
-
             <div class="col-sm-12">
                 <h4>Historia</h4>
                 <ul class="list">
@@ -72,7 +65,28 @@
                     </li>
                 </ul>
             </div>
-
         </div>
+        
+        <br><hr><br>
+        
+        <center><h1>Junta Directiva</h1></center><br>
+         <div class="row">
+            <?php 
+                 mysqli_next_result($link);
+                $sth = mysqli_query($link,"SELECT puesto_x_junta_directiva.id_puesto_x_junta_directiva,puesto_x_junta_directiva.nombre, puesto.nombre as puesto FROM `puesto_x_junta_directiva`,puesto WHERE puesto_x_junta_directiva.id_puesto = puesto.id_puesto and puesto_x_junta_directiva.id_asada = '".$_SESSION["asada"]."' order by puesto.id_puesto ");
+                while($r = mysqli_fetch_assoc($sth)) {
+                    echo '<div class="col-sm-4"><h4>'.$r['puesto'].'</h4>
+                    <ul class="list">
+                        <li>'.$r['nombre'].'</li>
+                    </ul>
+                    </div>';
+                }
+            ?>
+        </div>
+        
+        
+        
+        
+        
     </div>
 </div>

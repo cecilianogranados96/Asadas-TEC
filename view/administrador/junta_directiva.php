@@ -6,7 +6,6 @@
             echo "<script>alert('Borrado con éxito');location.href='?pag=".$_GET['pag']."';</script>";
             
         }
-        
         if(isset($_GET['nuevo'])){ 
                 if(isset($_GET['nuevo1'])){
                     mysqli_query($link,"

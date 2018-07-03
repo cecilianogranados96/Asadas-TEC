@@ -19,7 +19,7 @@
                                 <a class="btn btn-success" href="?pag=usuario/llenartramite&tramite='.$r['id_tramite'].'">Realizar</a> 
                             </td>
                             <td width="10%">
-                                <a class="btn btn-info" href="?pag=usuario/seleccionartramite&des='.$r['plantilla'].'">Descargar</a> 
+                                <a class="btn btn-info" href="'.$r['plantilla'].'" target="_blank">Descargar</a> 
                             </td>
                         </tr> 
                         ';
