@@ -23,7 +23,7 @@
                           <select  name="id_asada" id="select-beast" required>
                               <option value="" >Seleccionar</option>
                             <?php 
-                              $sth = mysqli_query($link,"SELECT id_asada,nombre FROM `asada` ");
+                              $sth = mysqli_query($link,"SELECT id_asada,nombre FROM `asada` where estado = 1 ");
                                 while($r = mysqli_fetch_assoc($sth)) {
                                     if ( $_SESSION["asada"] == $r['id_asada']){
                                         echo '<option value="'.$r['id_asada'].'">'.$r['nombre'].'</option>';

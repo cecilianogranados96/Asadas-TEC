@@ -52,8 +52,12 @@
                 `id_distrito`='".$_POST['id_distrito']."'
              WHERE `id_persona`= '".$_SESSION["persona"]."';";
             mysqli_query($link,$querry);
-            
-            $querry1 = "UPDATE `usuario` SET `usuario`='".$_POST['usuario']."', $pass `id_asada`='".$_POST['id_asada']."' WHERE `id_usuario`= '".$_SESSION["usuario"]."' ";
+            if($_SESSION["tipo"] == 3){ 
+                $asada = 'id_asada';
+            }else{
+                $asada = "'".$_POST['id_asada']."'";
+            }
+            $querry1 = "UPDATE `usuario` SET `usuario`='".$_POST['usuario']."', $pass `id_asada`= ".$asada." WHERE `id_usuario`= '".$_SESSION["usuario"]."' ";
             mysqli_query($link,$querry1);
             
             
@@ -129,24 +133,26 @@
                           </select>
                       </div>
                     </div>
-                    <div class="form-group">
-                      <label class="col-md-4 control-label" for="textinput">Asada por defecto</label>  
-                      <div class="col-md-4">
-                          <select name="id_asada" class="form-control"  required>
-                            <option value="" selected>Seleccionar</option>
-                            <?php 
-                              $sth = mysqli_query($link,"SELECT * FROM `asada`");
-                                while($r = mysqli_fetch_assoc($sth)) {
-                                    if ($datos['id_asada'] ==  $r['id_asada']){
-                                        echo '<option value="'.$r['id_asada'].'" selected>'.$r['nombre'].'</option>';
-                                    }else{
-                                        echo '<option value="'.$r['id_asada'].'">'.$r['nombre'].'</option>';
+                    <?php if($_SESSION["tipo"] != 3){ ?>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="textinput">Asada por defecto</label>  
+                          <div class="col-md-4">
+                              <select name="id_asada" class="form-control"  required>
+                                <option value="" selected>Seleccionar</option>
+                                <?php 
+                                  $sth = mysqli_query($link,"SELECT * FROM `asada` where estado = 1");
+                                    while($r = mysqli_fetch_assoc($sth)) {
+                                        if ($datos['id_asada'] ==  $r['id_asada']){
+                                            echo '<option value="'.$r['id_asada'].'" selected>'.$r['nombre'].'</option>';
+                                        }else{
+                                            echo '<option value="'.$r['id_asada'].'">'.$r['nombre'].'</option>';
+                                        }
                                     }
-                                }
-                              ?>
-                          </select>
-                      </div>
-                    </div>
+                                  ?>
+                              </select>
+                          </div>
+                        </div>
+                    <?php } ?> 
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="textinput">Dirección exacta</label>  
                       <div class="col-md-4">

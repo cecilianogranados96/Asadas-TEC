@@ -2,13 +2,15 @@
 				<div class="copyright">
 					<div class="container">
 						<p>
-							<a>Asadas TEC</a>. <?php echo date('Y'); ?> © Todos los derechos reservados.<br>
-                            Tecnológico de Costa Rica
+							<a>Asadas TEC</a>. <?php echo date('Y'); ?> © 
+                            Tecnológico de Costa Rica <br> <?php echo ucwords(strftime("%A %d de %B del %Y")); ?>
 						</p>
 					</div>
 				</div>
 			</footer>
 		</div>
+
+
 		<script src="assets/js/jquery-1.12.4.min.js" type="text/javascript"></script>
 		<script src="assets/js/imagesloaded.pkgd.min.js" type="text/javascript"></script>
 		<script src="assets/js/isotope.pkgd.min.js" type="text/javascript"></script>

@@ -13,15 +13,13 @@
 
         
         if(isset($_GET['nuevo'])){
-
-
-        foreach($_FILES as $file){
-            $name = $file['name'];
-            $name = str_replace(' ', '', $name);
-            $name = explode('.', $name);
-            $destino =  "uploads/logos_asadas/".generarCodigo(6).'.'.$name[1];
-            copy($file['tmp_name'],$destino);
-        }
+            foreach($_FILES as $file){
+                $name = $file['name'];
+                $name = str_replace(' ', '', $name);
+                $name = explode('.', $name);
+                $destino =  "uploads/logos_asadas/".generarCodigo(6).'.'.$name[1];
+                copy($file['tmp_name'],$destino);
+            }
              $querry = "     
              INSERT INTO `asada`(
                 `nombre`, 
@@ -71,8 +69,6 @@
                   <input name="nombre" type="file" placeholder="Título" class="form-control input-md" required>
               </div>
             </div>
-            
-            
             <div class="form-group">
               <label class="col-md-4 control-label" for="textinput">Seleccione el distrito:</label>  
               <div class="col-md-4">
@@ -158,6 +154,8 @@
     
           <center><button class="btn btn-success" type="submit">Crear</button></center>
         </form>
+        
+        
 <script src="https://nosir.github.io/cleave.js/dist/cleave.min.js"></script>
          <script>
    

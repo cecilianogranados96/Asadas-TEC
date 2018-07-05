@@ -34,15 +34,13 @@
                         `primerApellido`, 
                         `segundoApellido`, 
                         `direccion`, 
-                        `id_distrito`, 
-                        `tipo_persona_id`
+                        `id_distrito`
                     )VALUES (
                         '".$_POST['nombre']."',
                         '".$_POST['primerApellido']."',
                         '".$_POST['segundoApellido']."',
                         '".$_POST['direccion']."',
-                        '".$_POST['id_distrito']."',
-                        '".$tipo."'
+                        '".$_POST['id_distrito']."'
                     )");
                     mysqli_query($link,"
                     INSERT INTO `usuario`(
@@ -244,13 +242,30 @@
                 </form>
         <?php }else { ?>
                 <center><h1><?php echo $nombre; ?></h1></center>
-                <center><a href="?pag=<?php echo $_GET['pag']; ?>&tipo=<?php echo $_GET['tipo']; ?>&nuevo=1"  class="btn btn-success" href="#">Nuevo Fontanero</a></center>
+                <center><a href="?pag=<?php echo $_GET['pag']; ?>&tipo=<?php echo $_GET['tipo']; ?>&nuevo=1"  class="btn btn-success" href="#">Nuevo <?php echo $nombre; ?></a></center>
                 <br>
+                        
+        <center>
+            <form action="?pag=<?php echo $_GET['pag']; ?>&tipo=<?php echo $_GET['tipo']; ?>" class="form-horizontal" style="width: 50%;" method="post">
+                    <div class="col-md-3">
+                        Busqueda
+                    </div>
+                    <div class="col-md-7">
+                    <input name="querry" type="text" placeholder="Busqueda"  <?php if(isset($_POST['querry'])){ echo 'value="'.$_POST['querry'].'"';} ?> class="form-control input-md" />
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success" type="submit">Enviar</button>
+                    </div>
+            </form>
+        </center>
+        <br><br>
+        
                 <table class="table">
                   <tr class="success">
+                    <th>Cédula</th>
                     <th>Nombre completo</th>
-                   
-                    <th>Correo electrónico</th>
+                    <th>Usuario</th>
+                    <th>Email</th>
                     <th>Acciones</th>
                       <?php 
                      if ($tipo == 4){
@@ -259,13 +274,50 @@
                       ?>
                   </tr>
                 <?php 
-                    $sth = mysqli_query($link,"SELECT persona.nombre,primerApellido,segundoApellido,persona.id_persona,usuario.id_asada, asada.nombre as asada , usuario.usuario, usuario.id_usuario from persona,usuario,asada WHERE persona.id_persona = usuario.id_persona and asada.id_asada = usuario.id_asada and usuario.tipo_usuario_id = $tipo and usuario.id_asada = '".$_SESSION["asada"]."' ");
+                    $querry = "";
+                     if(isset($_POST['querry'])){
+                         $querry =  " and 
+                         (persona.cedula like '%".$_POST['querry']."%' or
+                         persona.email like '%".$_POST['querry']."%' or
+                         usuario.usuario like '%".$_POST['querry']."%' or
+                         persona.nombre like '%".$_POST['querry']."%' or 
+                         persona.primerApellido like '%".$_POST['querry']."%' or 
+                         persona.segundoApellido like '%".$_POST['querry']."%') ";
+                     }
+                     
+                    $consulta = "SELECT persona.nombre,persona.cedula,persona.email,primerApellido,segundoApellido,persona.id_persona,usuario.id_asada, asada.nombre as asada , usuario.usuario, usuario.id_usuario from persona,usuario,asada WHERE persona.id_persona = usuario.id_persona and asada.id_asada = usuario.id_asada and usuario.tipo_usuario_id = $tipo and usuario.id_asada = '".$_SESSION["asada"]."' $querry ";
+                    $sth = mysqli_query($link,$consulta);
+                     
+                     
+                     
+                     
+                    if (!isset($_GET["pagina"])) {
+                       $inicio = 0;
+                       $pagina = 1;
+                    } else {
+                       $inicio = ($_GET["pagina"] - 1) * $TAMANO_PAGINA;
+                       $pagina = $_GET["pagina"];
+                    }
+                    $url= "?pag=".$_GET['pag']."&tipo=".$tipo."";
+                    $total_paginas = ceil(mysqli_num_rows($sth) / $TAMANO_PAGINA);
+                    $consulta .=  " LIMIT ".$inicio."," . $TAMANO_PAGINA;
+                    $sth = mysqli_query($link,$consulta);
+                     
+                     
+                     
+                     
+                     
                     while($r = mysqli_fetch_assoc($sth)) {
                         echo '
                          <tr>
+                        <th>'.$r['cedula'].'</th>
+                            
                             <th>'.$r['nombre'].' '.$r['primerApellido'].' '.$r['segundoApellido'].'</th>
-                        
+                    
                             <th>'.$r['usuario'].'</th>
+                            
+                            <th>'.$r['email'].'</th>
+                            
                             <th>
                                 <a href="?pag='.$_GET['pag'].'&tipo='.$tipo.'&editar='.$r['id_usuario'].'&cerrar=1"  class="btn btn-warning" href="#">Editar</a>
                                 <a href="?pag='.$_GET['pag'].'&tipo='.$tipo.'&eliminar='.$r['id_persona'].'&cerrar=1" onclick="javascript: return confirm('."'".'¿Estas seguro?'."'".');"  class="btn btn-danger" href="#">Eliminar</a>
@@ -281,6 +333,25 @@
                     }
                 ?>
                 </table>
+                    <center>
+            <ul class="pagination">
+                <?php 
+                if ($total_paginas > 1) {
+                    if ($pagina != 1)
+                      echo ' <li><a href="'.$url.'&pagina='.($pagina-1).'">«</a></li>';
+                      for ($i=1;$i<=$total_paginas;$i++) {
+                         if ($pagina == $i)
+                          echo "<li class='active'><a href='".$url."&pagina=".$pagina."'>$pagina<span class='sr-only'>(current)</span></a></li>";
+                         else
+                            echo ' <li><a href="'.$url.'&pagina='.$i.'">'.$i.'</a></li>';
+                      }
+                      if ($pagina != $total_paginas)
+                         echo '<li><a href="'.$url.'&pagina='.($pagina+1).'">»</a></li>';
+                    }
+                ?>
+            </ul>
+            </center>
+        
         <?php } ?> 
     </div>
 </div>                  <script>

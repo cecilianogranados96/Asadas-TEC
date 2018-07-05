@@ -16,7 +16,7 @@
 
 					<div class="owl-carousel client-carousel nf-carousel-theme ">
                     <?php 
-                    $sth = mysqli_query($link,"SELECT  nombre, logo FROM asada");
+                    $sth = mysqli_query($link,"SELECT nombre, logo FROM asada where estado = 1 ");
 
                     while($r = mysqli_fetch_assoc($sth)) {
                         echo '						
@@ -30,8 +30,6 @@
 					</div>
 				</div>
 			</section>
-			<!-- End Client Logos Section -->			
-			<!-- Blog Section -->
 			<section id="blog" class="padding ptb-xs-40  gray-bg new-blog">
 				<div class="container">
 					<div class="row pb-30 text-center">
@@ -47,42 +45,38 @@
 
 					<div class="row">
                     <?php 
-                    $sth = mysqli_query($link,"SELECT * FROM noticia ORDER by fecha DESC LIMIT 3");
-
-                    while($r = mysqli_fetch_assoc($sth)) {
-                        echo '
-						<div class="col-md-4 mb-xs-30 mb-sm-30">
-							<div class="blog-post">
-								<div class="post-media img-scale">
-									<img src="'.$r['imagen'].'" alt="">
-								</div>
-								<div class="post-meta">
-									<span>Fecha: '.$r['fecha'].' </span>
-								</div>
-								<div class="post-header">
-									<h4><a href="blog-detail.html">'.$r['titulo'].'</a></h4>
-								</div>
-								<div class="post-entry">
-									<p>
-										'.substr($r['contenido'], 0, 100).'...
-									</p>
-								</div>
-								<div class="post-more-link pull-left">
-									<a href="?pag=general/noticia&id='.$r['id_noticia'].'" class="btn-text ">Leer más</a>
-								</div>
-							</div>
-						</div>';
-                    }
+                        $sth = mysqli_query($link,"SELECT * FROM noticia ORDER by fecha DESC LIMIT 3");
+                        while($r = mysqli_fetch_assoc($sth)) {
+                            echo '
+                            <div class="col-md-4 mb-xs-30 mb-sm-30">
+                                <div class="blog-post">
+                                    <div class="post-media img-scale">
+                                        <img src="'.$r['imagen'].'" alt="">
+                                    </div>
+                                    <div class="post-meta">
+                                        <span>Fecha: '.$r['fecha'].' </span>
+                                    </div>
+                                    <div class="post-header">
+                                        <h4><a href="blog-detail.html">'.$r['titulo'].'</a></h4>
+                                    </div>
+                                    <div class="post-entry">
+                                        <p>
+                                            '.substr($r['contenido'], 0, 100).'...
+                                        </p>
+                                    </div>
+                                    <div class="post-more-link pull-left">
+                                        <a href="?pag=general/noticia&id='.$r['id_noticia'].'" class="btn-text ">Leer más</a>
+                                    </div>
+                                </div>
+                            </div>';
+                        }
                     ?>
 					</div>
 				</div>
 			</section>
-			<!-- End Blog Section -->
-		<!-- End Intro Section -->
 			<div class="section-bar ptb-40">
 				<div class="container">
 					<div class="row text-center light-color">
-
 						<div class="col-sm-4 bg-pic-2 ptb-20 ptb-xs-0">
 							<div class="section-bar-text">
 								<div class="icon-wrap">
@@ -93,9 +87,7 @@
 									Intuitivo y rapido de activar, has una cuenta y realiza tu solicitud.
 								</div>
 							</div>
-
 						</div>
-
 						<div class="col-sm-4 bg-pic ptb-20 ptb-xs-0">
 							<div class="section-bar-text">
 								<div class="icon-wrap color">
@@ -121,7 +113,6 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>

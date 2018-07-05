@@ -38,9 +38,9 @@
               </tr>
              <?php 
                 if(isset($_GET['estado'])){
-                    $consulta = "SELECT ordenes_trabajo.id_orden,ordenes_trabajo.id_formulario,ordenes_trabajo.id_usuario_apertura,ordenes_trabajo.historial,ordenes_trabajo.estado,ordenes_trabajo.fecha_apertura,CONCAT(persona.nombre,' ', persona.primerApellido, ' ',persona.segundoApellido) as encargado, tramite.nombre as tipo,formulario.id_usuario as usuario FROM `ordenes_trabajo`,usuario,persona,tramite,formulario WHERE usuario.id_persona = persona.id_persona and ordenes_trabajo.id_formulario = formulario.id_formulario and formulario.id_tramite = tramite.id_tramite and ordenes_trabajo.id_encargado = usuario.id_usuario and usuario.id_asada = '".$_SESSION["asada"]."' and ordenes_trabajo.estado = '".$_GET['estado']."'  ORDER BY ordenes_trabajo.fecha_apertura ASC";
+                    $consulta = "SELECT ordenes_trabajo.id_orden,ordenes_trabajo.id_formulario,ordenes_trabajo.id_usuario_apertura,ordenes_trabajo.historial,ordenes_trabajo.estado,ordenes_trabajo.fecha_apertura,CONCAT(persona.nombre,' ', persona.primerApellido, ' ',persona.segundoApellido) as encargado, tramite.nombre as tipo,DATEDIFF(NOW(),ordenes_trabajo.fecha_apertura) as dias_transcurridos,formulario.id_usuario as usuario FROM `ordenes_trabajo`,usuario,persona,tramite,formulario WHERE usuario.id_persona = persona.id_persona and ordenes_trabajo.id_formulario = formulario.id_formulario and formulario.id_tramite = tramite.id_tramite and ordenes_trabajo.id_encargado = usuario.id_usuario and usuario.id_asada = '".$_SESSION["asada"]."' and ordenes_trabajo.estado = '".$_GET['estado']."'  ORDER BY ordenes_trabajo.fecha_apertura ASC";
                 }else{
-                    $consulta = "SELECT ordenes_trabajo.id_orden,ordenes_trabajo.id_formulario,ordenes_trabajo.id_usuario_apertura,ordenes_trabajo.historial,ordenes_trabajo.estado,ordenes_trabajo.fecha_apertura,CONCAT(persona.nombre,' ', persona.primerApellido, ' ',persona.segundoApellido) as encargado, tramite.nombre as tipo,formulario.id_usuario as usuario FROM `ordenes_trabajo`,usuario,persona,tramite,formulario WHERE usuario.id_persona = persona.id_persona and ordenes_trabajo.id_formulario = formulario.id_formulario and formulario.id_tramite = tramite.id_tramite and ordenes_trabajo.id_encargado = usuario.id_usuario and usuario.id_asada = '".$_SESSION["asada"]."' ORDER BY ordenes_trabajo.fecha_apertura ASC";
+                    $consulta = "SELECT ordenes_trabajo.id_orden,ordenes_trabajo.id_formulario,ordenes_trabajo.id_usuario_apertura,ordenes_trabajo.historial,ordenes_trabajo.estado,DATEDIFF(NOW(),ordenes_trabajo.fecha_apertura) as dias_transcurridos,ordenes_trabajo.fecha_apertura,CONCAT(persona.nombre,' ', persona.primerApellido, ' ',persona.segundoApellido) as encargado, tramite.nombre as tipo,formulario.id_usuario as usuario FROM `ordenes_trabajo`,usuario,persona,tramite,formulario WHERE usuario.id_persona = persona.id_persona and ordenes_trabajo.id_formulario = formulario.id_formulario and formulario.id_tramite = tramite.id_tramite and ordenes_trabajo.id_encargado = usuario.id_usuario and usuario.id_asada = '".$_SESSION["asada"]."' ORDER BY ordenes_trabajo.fecha_apertura ASC";
                 }
                 $sth = mysqli_query($link,$consulta);
                 
@@ -69,8 +69,8 @@
                             <th>'.$r['tipo'].'</th>
                             <th>'.$nombre_usuario['nombre'].'</th>
                             <th>'.$r['encargado'].'</th>
-                            <th>'.$r['fecha_apertura'].'</th>
-    
+                            
+                            <th><center>'.$r['fecha_apertura'].' <br> ('.$r['dias_transcurridos'].' días) </center></th>
                             <th>'.$estado.'</th>
 
                                                     

@@ -20,81 +20,74 @@
                 $tipo = 4;
             }
         }
-        
         if(isset($_GET['eliminar'])){ 
             mysqli_query($link,"DELETE FROM `persona` WHERE `id_persona` = '".$_GET['eliminar']."'");
             echo "<script>alert('Borrado con éxito');location.href='?pag=".$_GET['pag']."&tipo=".$_GET['tipo']."';</script>";
             
         }
+         if(isset($_GET['per'])){
+            $query = "SELECT * FROM `usuario` WHERE `id_usuario` = '".$_GET['per']."' ";
+            $result = mysqli_query($link,$query);
+            $datos = mysqli_fetch_array($result);
+            $tipo = $datos['tipo_usuario_id'];    
+            $_SESSION["persona"] = $datos['id_persona'];
+            $_SESSION["tipo"] = $datos['tipo_usuario_id'];
+            $_SESSION["asada"] = $datos['id_asada'];
 
-                 if(isset($_GET['per'])){
-                    $query = "SELECT * FROM `usuario` WHERE `id_usuario` = '".$_GET['per']."' ";
-                    $result = mysqli_query($link,$query);
-                    $datos = mysqli_fetch_array($result);
-                    $tipo = $datos['tipo_usuario_id'];    
-                    $_SESSION["persona"] = $datos['id_persona'];
-                    $_SESSION["tipo"] = $datos['tipo_usuario_id'];
-                    $_SESSION["asada"] = $datos['id_asada'];
-                    
-                    $_SESSION["masterizado"] = 1;
-                     
-                    if ($tipo == 1 ){
-                        echo "<script languaje='JavaScript'>location.href='?pag=usuario/noticias';</script>";
-                        exit;
-                    }
-                     
-                    if ($tipo == 2 ){
-                        echo "<script languaje='JavaScript'>location.href='?pag=administrador/solicitudes';</script>";
-                        exit;
-                    }
-                    if ($tipo == 3 ){
-                        echo "<script languaje='JavaScript'>location.href='?pag=master/master';</script>";
-                        exit;
-                    }
-                    if ($tipo == 4 ){
-                        echo "<script languaje='JavaScript'>location.href='?pag=fontanero/ordenes&estado=1';</script>";
-                        exit;
-                    }
+            $_SESSION["masterizado"] = 1;
 
-                    
-                }
-        
-        
-        
-        if(isset($_GET['nuevo'])){ 
-                if(isset($_GET['nuevo1'])){
-                    mysqli_query($link,"
-                    INSERT INTO `persona`(
-                        `nombre`, 
-                        `primerApellido`, 
-                        `segundoApellido`, 
-                        `direccion`, 
-                        `id_distrito`, 
-                        `tipo_persona_id`
-                    )VALUES (
-                        '".$_POST['nombre']."',
-                        '".$_POST['primerApellido']."',
-                        '".$_POST['segundoApellido']."',
-                        '".$_POST['direccion']."',
-                        '".$_POST['id_distrito']."',
-                        '".$tipo."'
-                    )");
-                    mysqli_query($link,"
-                    INSERT INTO `usuario`(
-                        `id_persona`, 
-                        `usuario`, 
-                        `contrasena`, 
-                        `tipo_usuario_id`, 
-                        `id_asada`
-                    ) VALUES (
-                        '".mysqli_insert_id ($link)."',
-                        '".$_POST['usuario']."',
-                        '".md5($_POST['password'])."',
-                        '".$tipo."',
-                        '".$_POST['id_asada']."'
-                    )");
-                    echo "<script>alert('Insertado con éxito');location.href='?pag=".$_GET['pag']."&tipo=".$_GET['tipo']."';</script>";
-                }
+            if ($tipo == 1 ){
+                echo "<script languaje='JavaScript'>location.href='?pag=usuario/noticias';</script>";
+                exit;
+            }
+
+            if ($tipo == 2 ){
+                echo "<script languaje='JavaScript'>location.href='?pag=administrador/solicitudes';</script>";
+                exit;
+            }
+            if ($tipo == 3 ){
+                echo "<script languaje='JavaScript'>location.href='?pag=master/master';</script>";
+                exit;
+            }
+            if ($tipo == 4 ){
+                echo "<script languaje='JavaScript'>location.href='?pag=fontanero/ordenes&estado=1';</script>";
+                exit;
+            }
+
+
+        } 
+    if(isset($_GET['nuevo'])){ 
+            if(isset($_GET['nuevo1'])){
+                mysqli_query($link,"
+                INSERT INTO `persona`(
+                    `nombre`, 
+                    `primerApellido`, 
+                    `segundoApellido`, 
+                    `direccion`, 
+                    `id_distrito`
+                )VALUES (
+                    '".$_POST['nombre']."',
+                    '".$_POST['primerApellido']."',
+                    '".$_POST['segundoApellido']."',
+                    '".$_POST['direccion']."',
+                    '".$_POST['id_distrito']."'
+                )");
+                mysqli_query($link,"
+                INSERT INTO `usuario`(
+                    `id_persona`, 
+                    `usuario`, 
+                    `contrasena`, 
+                    `tipo_usuario_id`, 
+                    `id_asada`
+                ) VALUES (
+                    '".mysqli_insert_id ($link)."',
+                    '".$_POST['usuario']."',
+                    '".md5($_POST['password'])."',
+                    '".$tipo."',
+                    '".$_POST['id_asada']."'
+                )");
+                echo "<script>alert('Insertado con éxito');location.href='?pag=".$_GET['pag']."&tipo=".$_GET['tipo']."';</script>";
+            }
         ?>
                 <center><h1>Registrar <?php echo $nombre; ?></h1></center>
                 <form method="post" action="?pag=<?php echo $_GET['pag']; ?>&tipo=<?php echo $_GET['tipo']; ?>&nuevo=1&nuevo1=1" class="form-horizontal">       
@@ -180,17 +173,13 @@
         <?php }elseif(isset($_GET['editar'])){ 
                 $sth = mysqli_query($link,"SELECT * FROM persona,usuario WHERE persona.id_persona = usuario.id_persona  and usuario.id_usuario = '".$_GET['editar']."'");
                 $datos = mysqli_fetch_assoc($sth);
-                                                
-                                                
-    
+                                        
                 if(isset($_GET['editar1'])){
-                    
                     if ($_POST['password'] != ""){
                         $pass = "`contrasena`= '".md5($_POST['password'])."',  ";
                     }else{
                         $pass = "";
                     }
-                  
                     mysqli_query($link,"
                     UPDATE `persona` SET 
                     `nombre`='".$_POST['nombre']."',
@@ -296,29 +285,71 @@
                 </form>
         <?php }else { ?>
                 <center><h1><?php echo $nombre; ?></h1></center>
-                <center><a href="?pag=<?php echo $_GET['pag']; ?>&tipo=<?php echo $_GET['tipo']; ?>&nuevo=1"  class="btn btn-success" href="#">Nuevo Fontanero</a></center>
-                <br>
+                <center><a href="?pag=<?php echo $_GET['pag']; ?>&tipo=<?php echo $_GET['tipo']; ?>&nuevo=1"  class="btn btn-success" href="#">Nuevo <?php echo $nombre; ?></a></center>
+               
+        <center>
+            <form action="?pag=<?php echo $_GET['pag']; ?>&tipo=<?php echo $_GET['tipo']; ?>" class="form-horizontal" style="width: 50%;" method="post">
+                    <div class="col-md-3">
+                        Busqueda
+                    </div>
+                    <div class="col-md-7">
+                    <input name="querry" type="text" placeholder="Busqueda" <?php if(isset($_POST['querry'])){ echo 'value="'.$_POST['querry'].'"';} ?> class="form-control input-md" />
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success" type="submit">Enviar</button>
+                    </div>
+            </form>
+        </center>
+        <br><br>
                 <table class="table">
                   <tr class="success">
+                    <th>Cédula</th>
                     <th>Nombre completo</th>
-                    <th>ASADA</th>
                     <th>Usuario</th>
-                      <th>Personalice</th>
+                    <th>Email</th>
+                    <th>ASADA</th>
+                    <th>Personalice</th>
                     <th>Acciones</th>
                   </tr>
-                <?php 
-                    $sth = mysqli_query($link,"SELECT persona.nombre,primerApellido,segundoApellido,persona.id_persona,usuario.id_asada, asada.nombre as asada , usuario.usuario, usuario.id_usuario from persona,usuario,asada WHERE persona.id_persona = usuario.id_persona and asada.id_asada = usuario.id_asada and usuario.tipo_usuario_id = $tipo");
+                <?php
+                     $querry = "";
+                     if(isset($_POST['querry'])){
+                         $querry =  " and 
+                         (persona.cedula like '%".$_POST['querry']."%' or
+                         persona.email like '%".$_POST['querry']."%' or
+                         usuario.usuario like '%".$_POST['querry']."%' or
+                         asada.nombre like '%".$_POST['querry']."%' or
+                         persona.nombre like '%".$_POST['querry']."%' or 
+                         persona.primerApellido like '%".$_POST['querry']."%' or 
+                         persona.segundoApellido like '%".$_POST['querry']."%') ";
+                     }
+                    $consulta = "SELECT persona.cedula,persona.email, CONCAT(persona.nombre,' ',persona.primerApellido,' ',persona.segundoApellido) as nombre_persona,persona.id_persona,usuario.id_asada, asada.nombre as asada , usuario.usuario, usuario.id_usuario from persona,usuario,asada WHERE persona.id_persona = usuario.id_persona and asada.id_asada = usuario.id_asada and usuario.tipo_usuario_id = $tipo $querry";
+                     
+                    $sth = mysqli_query($link,$consulta);
+                       
+                    if (!isset($_GET["pagina"])) {
+                       $inicio = 0;
+                       $pagina = 1;
+                    } else {
+                       $inicio = ($_GET["pagina"] - 1) * $TAMANO_PAGINA;
+                       $pagina = $_GET["pagina"];
+                    }
+                    $url= "?pag=".$_GET['pag']."&tipo=".$tipo."";
+                    $total_paginas = ceil(mysqli_num_rows($sth) / $TAMANO_PAGINA);
+                    $consulta .=  " LIMIT ".$inicio."," . $TAMANO_PAGINA;
+                    $sth = mysqli_query($link,$consulta);
+                     
                     while($r = mysqli_fetch_assoc($sth)) {
                         echo '
                          <tr>
-                            <th>'.$r['nombre'].' '.$r['primerApellido'].' '.$r['segundoApellido'].'</th>
-                            <th>'.$r['asada'].'</th>
+                            <th>'.$r['cedula'].'</th>
+                            <th>'.$r['nombre_persona'].'</th>
                             <th>'.$r['usuario'].'</th>
+                            <th>'.$r['email'].'</th>
+                            <th>'.$r['asada'].'</th>
                             <th>
                                 <a href="?pag='.$_GET['pag'].'&tipo='.$tipo.'&per='.$r['id_usuario'].'" class="btn btn-primary" href="#">Personalice</a>
                             </th>
-                            
-                            
                             <th>
                                 <a href="?pag='.$_GET['pag'].'&tipo='.$tipo.'&editar='.$r['id_usuario'].'&cerrar=1"  class="btn btn-warning" href="#">Editar</a>
                                 <a href="?pag='.$_GET['pag'].'&tipo='.$tipo.'&eliminar='.$r['id_persona'].'&cerrar=1" onclick="javascript: return confirm('."'".'¿Estas seguro?'."'".');"  class="btn btn-danger" href="#">Eliminar</a>
@@ -327,11 +358,30 @@
                     }
                 ?>
                 </table>
+            <center>
+            <ul class="pagination">
+                <?php 
+                if ($total_paginas > 1) {
+                    if ($pagina != 1)
+                      echo ' <li><a href="'.$url.'&pagina='.($pagina-1).'">«</a></li>';
+                      for ($i=1;$i<=$total_paginas;$i++) {
+                         if ($pagina == $i)
+                          echo "<li class='active'><a href='".$url."&pagina=".$pagina."'>$pagina<span class='sr-only'>(current)</span></a></li>";
+                         else
+                            echo ' <li><a href="'.$url.'&pagina='.$i.'">'.$i.'</a></li>';
+                      }
+                      if ($pagina != $total_paginas)
+                         echo '<li><a href="'.$url.'&pagina='.($pagina+1).'">»</a></li>';
+                    }
+                ?>
+            </ul>
+            </center>
         <?php } ?> 
     </div>
-</div>                  <script>
-                    $('#select-beast').selectize({
-                        create: false,
-                        sortField: 'text'
-                    });
-                  </script>
+    </div>         
+<script>
+$('#select-beast').selectize({
+    create: false,
+    sortField: 'text'
+});
+</script>

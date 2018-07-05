@@ -15,8 +15,6 @@
         }
         if(isset($_GET['nuevo'])){ 
                 if(isset($_GET['nuevo1'])){
-                    
-                    
                     $name = $_FILES['logo']['name'];
                     $name = str_replace(' ', '', $name);
                     $name = explode('.', $name);
@@ -118,9 +116,27 @@
                     <th>Acciones</th>
                   </tr>
                 <?php 
-                    $querry = "SELECT * FROM `noticia` where id_asada = '".$_SESSION["asada"]."' ORDER by `fecha` DESC";
-                    $sth = mysqli_query($link,$querry);
-                    while($r = mysqli_fetch_assoc($sth)) {
+                    $consulta = "SELECT * FROM `noticia` where id_asada = '".$_SESSION["asada"]."' ORDER by `fecha` DESC";
+                     
+                    $sth = mysqli_query($link,$consulta);
+                    
+                     if (!isset($_GET["pagina"])) {
+                       $inicio = 0;
+                       $pagina = 1;
+                    } else {
+                       $inicio = ($_GET["pagina"] - 1) * $TAMANO_PAGINA;
+                       $pagina = $_GET["pagina"];
+                    }
+                    $url= "?pag=".$_GET['pag']."";
+                    $total_paginas = ceil(mysqli_num_rows($sth) / $TAMANO_PAGINA);
+                    $consulta .=  " LIMIT ".$inicio."," . $TAMANO_PAGINA;
+                    $sth = mysqli_query($link,$consulta);
+                     
+                     
+                     
+                     
+                     
+                     while($r = mysqli_fetch_assoc($sth)) {
                         echo '
                          <tr>
                             <th>'.$r['fecha'].'</th>
@@ -133,6 +149,24 @@
                     }
                 ?>
                 </table>
+                            <center>
+            <ul class="pagination">
+                <?php 
+                if ($total_paginas > 1) {
+                    if ($pagina != 1)
+                      echo ' <li><a href="'.$url.'&pagina='.($pagina-1).'">«</a></li>';
+                      for ($i=1;$i<=$total_paginas;$i++) {
+                         if ($pagina == $i)
+                          echo "<li class='active'><a href='".$url."&pagina=".$pagina."'>$pagina<span class='sr-only'>(current)</span></a></li>";
+                         else
+                            echo ' <li><a href="'.$url.'&pagina='.$i.'">'.$i.'</a></li>';
+                      }
+                      if ($pagina != $total_paginas)
+                         echo '<li><a href="'.$url.'&pagina='.($pagina+1).'">»</a></li>';
+                    }
+                ?>
+            </ul>
+            </center>
         <?php } ?> 
     </div>
 </div>

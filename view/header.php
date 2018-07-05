@@ -47,10 +47,23 @@
         if ($_SESSION["tipo"] == 3){ //Master
             $menu = "
             <li><a href='?pag=inicio'>Inicio</a></li>
-            <li><a href='?pag=master/usuarios&tipo=3'>Master</a></li>
-            <li><a href='?pag=master/usuarios&tipo=2'>Administradores</a></li>
-            <li><a href='?pag=master/usuarios&tipo=4'>Fontaneros</a></li>
-            <li><a href='?pag=master/nueva_asada'>Crear Asada</a></li>";
+            
+             <li><a href='?pag=master/tramites'>Formularios Generales</a> 
+                <ul class='sub-nav'>
+                    <li><a href='?pag=master/crear_tramite'>Crear Formularios</a><li>
+                    <li><a href='?pag=master/tramites'>Ver Formularios</a><li>
+                 </ul>
+             <li>
+             
+            <li><a href='#'>Usuarios</a>
+                <ul class='sub-nav'>
+                    <li><a href='?pag=master/usuarios&tipo=3'>Master</a></li>
+                    <li><a href='?pag=master/usuarios&tipo=2'>Administradores</a></li>
+                    <li><a href='?pag=master/usuarios&tipo=4'>Fontaneros</a></li>
+                 </ul>
+             <li>
+             <li><a href='?pag=master/asadas'>Asadas</a></li>
+            ";
         }
         if ($_SESSION["tipo"] == 4){ //Fontanero
             $menu = "
@@ -84,6 +97,7 @@
         <script src="assets/js/jquery.min.js"></script>
         <link rel="stylesheet" href="assets/css/selectize.default.css" data-theme="default">
         <link rel="stylesheet" href="assets/css/selectize.bootstrap3.css" data-theme="bootstrap3" disabled="disabled">
+        <script src="https://cdn.ckeditor.com/ckeditor5/10.1.0/classic/ckeditor.js"></script>
         <script src="assets//js/selectize.js"></script>
 	</head>
 	<body class="full-intro background--dark">

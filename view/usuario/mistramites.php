@@ -11,7 +11,22 @@
 					  </tr>
 				
                      <?php 
-                        $sth = mysqli_query($link,"SELECT formulario.fecha,tramite.nombre as tramite, estado_solicitud.nombre as estado_solicitud, formulario.id_formulario, formulario.id_estado_solicitud FROM `formulario`,tramite,estado_solicitud WHERE formulario.id_tramite = tramite.id_tramite and estado_solicitud.id_estado_solicitud = formulario.id_estado_solicitud and formulario.id_usuario = '".$_SESSION["usuario"]."' ORDER by formulario.fecha DESC");
+                        $consulta = "SELECT formulario.fecha,tramite.nombre as tramite, estado_solicitud.nombre as estado_solicitud, formulario.id_formulario, formulario.id_estado_solicitud FROM `formulario`,tramite,estado_solicitud WHERE formulario.id_tramite = tramite.id_tramite and estado_solicitud.id_estado_solicitud = formulario.id_estado_solicitud and formulario.id_usuario = '".$_SESSION["usuario"]."' ORDER by formulario.fecha DESC";
+                        $sth = mysqli_query($link,$consulta);
+                        
+                        
+                    if (!isset($_GET["pagina"])) {
+                        $inicio = 0;
+                        $pagina = 1;
+                    } else {
+                        $inicio = ($_GET["pagina"] - 1) * $TAMANO_PAGINA;
+                        $pagina = $_GET["pagina"];
+                    }
+                    $url= "?pag=".$_GET['pag']."";
+                    $total_paginas = ceil(mysqli_num_rows($sth) / $TAMANO_PAGINA);
+                    $consulta .=  " LIMIT ".$inicio."," . $TAMANO_PAGINA;
+                    $sth = mysqli_query($link,$consulta);
+                        
                         while($r = mysqli_fetch_assoc($sth)) {
                             
                             if ($r['id_estado_solicitud'] == 1){
@@ -34,6 +49,24 @@
                         }
                         ?>
 	</table>
+                 <center>
+            <ul class="pagination">
+                <?php 
+                if ($total_paginas > 1) {
+                    if ($pagina != 1)
+                      echo ' <li><a href="'.$url.'&pagina='.($pagina-1).'">«</a></li>';
+                      for ($i=1;$i<=$total_paginas;$i++) {
+                         if ($pagina == $i)
+                          echo "<li class='active'><a href='".$url."&pagina=".$pagina."'>$pagina<span class='sr-only'>(current)</span></a></li>";
+                         else
+                            echo ' <li><a href="'.$url.'&pagina='.$i.'">'.$i.'</a></li>';
+                      }
+                      if ($pagina != $total_paginas)
+                         echo '<li><a href="'.$url.'&pagina='.($pagina+1).'">»</a></li>';
+                    }
+                ?>
+            </ul>
+            </center>
     </div>
 </div>
 			

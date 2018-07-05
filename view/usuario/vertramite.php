@@ -14,7 +14,6 @@
                   <td><b>Estado</b></td>
                     <td><b><center><?php echo $tramite['estado']; ?></center></b></td>
                 </tr>
-              
                 <?php 
                 $datos = mysqli_fetch_assoc($sth);
                 $array = json_decode($tramite['formulario'],true);
