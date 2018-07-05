@@ -57,7 +57,7 @@
                 <center><h1>Editar Inventario</h1><h5><?php echo $nombre; ?></h5></center>
                 <form method="post" action="?pag=<?php echo $_GET['pag']; ?>&fontanero=<?php echo $_GET['fontanero']; ?>&editar=<?php echo $_GET['editar']; ?>&editar1=1" class="form-horizontal">       
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="textinput">Codigo</label>  
+                      <label class="col-md-4 control-label" for="textinput">Código</label>  
                       <div class="col-md-4">
                           <input name="id_inventario" type="text" placeholder="ID Producto" value="<?php echo $datos['id_inventario']; ?>" class="form-control input-md" required readonly>
                       </div>
@@ -86,7 +86,7 @@
       
             <tr class="warning">
                 <th>
-                    <center><b>Codigo producto</b></center>
+                    <center><b>Código producto</b></center>
                 </th>
                 <th>
                     <center><b>Nombre</b></center>

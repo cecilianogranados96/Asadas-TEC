@@ -116,7 +116,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="textinput">Ubicacion</label>  
+                      <label class="col-md-4 control-label" for="textinput">Ubicación</label>  
                       <div class="col-md-4">
                           <select name="id_distrito" class="form-control"  required>
                             <option value="" selected>Seleccionar</option>
@@ -156,7 +156,7 @@
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="textinput">Dirección exacta</label>  
                       <div class="col-md-4">
-                          <input name="direccion"  value="<?php echo $datos['direccion']; ?>" type="text" placeholder="Teléfono" class="form-control input-md" required/>
+                          <input name="direccion"  value="<?php echo $datos['direccion']; ?>" type="text" placeholder="Dirección" class="form-control input-md" required/>
                       </div>
                     </div>
                     <center><button class="btn btn-success" type="submit">Enviar</button></center>

@@ -41,7 +41,7 @@
             </center>
         </h1>
         <hr>
-        <h4>Descripcion del tramite:</h4><br>
+        <h4>Descripción del tramite:</h4><br>
         <?php echo $tramite['descripcion']; ?>
         <br><hr><br>
         <h4>Los requisitos para este trámite son:</h4><br>

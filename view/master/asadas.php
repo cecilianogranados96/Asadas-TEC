@@ -66,7 +66,7 @@
         <center><h1>Nueva Asada </h1></center>
             <form method="post" action="?pag=<?php echo $_GET['pag']; ?>&nuevo=1&nuevo1=1" class="form-horizontal" enctype="multipart/form-data">       
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite el nombre:</label>  
+              <label class="col-md-4 control-label" for="textinput"> Digité el nombre:</label>  
               <div class="col-md-4">
                   <input name="nombre" type="text" placeholder="Título" class="form-control input-md" required>
               </div>
@@ -98,19 +98,19 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite la dirección exacta:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité la dirección exacta:</label>  
               <div class="col-md-4">
                   <textarea name="direccion" class="form-control"></textarea>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite la cédula jurídica:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité la cédula jurídica:</label>  
               <div class="col-md-4">
                   <input name="cedulaJuridica" id="cedula" type="text" placeholder="Cédula jurídica" class="form-control input-md" required>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite el correo:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité el correo:</label>  
               <div class="col-md-4">
                   <input name="email" type="email" placeholder="Correo electrónico" class="form-control input-md" required>
               </div>
@@ -122,37 +122,37 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">*Digite el número de telefono:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité el número de teléfono:</label>  
               <div class="col-md-4">
                   <input name="telefono" id="numero" type="text" placeholder="Número de teléfono" class="form-control input-md" required>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite el horario:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité el horario:</label>  
               <div class="col-md-4">
                   <textarea name="horario" class="form-control"></textarea>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite el link de la página de Facebook:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité el link de la página de Facebook:</label>  
               <div class="col-md-4">
                   <input name="facebook" type="text" placeholder="Link" class="form-control input-md">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite la historia:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité la historia:</label>  
               <div class="col-md-4">
                   <textarea name="historia" class="form-control"></textarea>
               </div>
             </div>    
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite la misión:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité la misión:</label>  
               <div class="col-md-4">
                   <textarea name="mision" class="form-control"></textarea>
               </div>
             </div>               
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite la visión:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité la visión:</label>  
               <div class="col-md-4">
                   <textarea name="vision" class="form-control"></textarea>
                   
@@ -206,13 +206,13 @@
                 <center><h1>Editar Asada</h1></center>
                 <form method="post" action="?pag=<?php echo $_GET['pag']; ?>&editar=<?php echo $_GET['editar']; ?>&editar1=1" class="form-horizontal" enctype="multipart/form-data">   
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite el nombre:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité el nombre:</label>  
               <div class="col-md-4">
                   <input name="nombre" type="text" placeholder="Título" value="<?php echo $datos['nombre']; ?>" class="form-control input-md" required>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Nuevo Logo:</label>  
+              <label class="col-md-4 control-label" for="textinput">Nuevo logo:</label>  
               <div class="col-md-4">
                   <input name="logo" type="file" placeholder="Título" class="form-control input-md">
               </div>
@@ -242,19 +242,19 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite la dirección exacta:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité la dirección exacta:</label>  
               <div class="col-md-4">
                   <textarea name="direccion" class="form-control"><?php echo $datos['direccion']; ?></textarea>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite la cédula jurídica:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité la cédula jurídica:</label>  
               <div class="col-md-4">
                   <input name="cedulaJuridica" id="cedula" type="text"  value="<?php echo $datos['cedulaJuridica']; ?>" placeholder="Cédula jurídica" class="form-control input-md" required>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite el correo:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité el correo:</label>  
               <div class="col-md-4">
                   <input name="email" type="email" placeholder="Correo electrónico" value="<?php echo $datos['email']; ?>" class="form-control input-md" required>
               </div>
@@ -266,37 +266,37 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">*Digite el número de telefono:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité el número de teléfono:</label>  
               <div class="col-md-4">
                   <input name="telefono" id="numero" type="text" value="<?php echo $datos['telefono']; ?>" placeholder="Número de teléfono" class="form-control input-md" required>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite el horario:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité el horario:</label>  
               <div class="col-md-4">
                   <textarea name="horario" class="form-control"><?php echo $datos['horario']; ?></textarea>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite el link de la página de Facebook:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité el link de la página de Facebook:</label>  
               <div class="col-md-4">
                   <input name="redes" type="text" placeholder="Link"  value="<?php echo $datos['redes']; ?>"class="form-control input-md">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite la historia:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité la historia:</label>  
               <div class="col-md-4">
                   <textarea name="historia" class="form-control"><?php echo $datos['historia']; ?></textarea>
               </div>
             </div>    
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite la misión:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité la misión:</label>  
               <div class="col-md-4">
                   <textarea name="mision" class="form-control"><?php echo $datos['mision']; ?></textarea>
               </div>
             </div>               
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite la visión:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité la visión:</label>  
               <div class="col-md-4">
                   <textarea name="vision" class="form-control"><?php echo $datos['vision']; ?></textarea>
                   
@@ -318,7 +318,7 @@
                 </th>
                 
                 <th>
-                    <center><b>Direccion</b></center>
+                    <center><b>Dirección</b></center>
                 </th>
                 <th>
                     <center><b>Estado</b></center>

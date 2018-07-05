@@ -89,7 +89,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="textinput">Ubicacion</label>  
+                      <label class="col-md-4 control-label" for="textinput">Ubicación</label>  
                       <div class="col-md-4">
                           <select  id="select-beast" name="id_distrito" required>
                             <option value="" selected>Seleccionar</option>

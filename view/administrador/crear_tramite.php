@@ -133,7 +133,7 @@
                            <option value="nombre">Nombre</option>
                            <option value="primer_apellido">Primer Apellido</option>
                            <option value="segundo_apellido">Segundo Apellido</option>
-                           <option value="direccion">Direccion</option>
+                           <option value="direccion"> Dirección </option>
                            <option value="distrito">Distrito</option>
                            <option value="asada">Asada por defecto</option>
                         </select>

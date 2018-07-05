@@ -275,7 +275,7 @@
                 <tr class="success">
                     <td>
                         <center>
-                            <b>Codigo</b>
+                            <b>Código</b>
                         </center>
                     </td>
                     <td>

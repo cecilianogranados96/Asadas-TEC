@@ -12,7 +12,7 @@
                 $tipo = 2;
             }
             if($_GET['tipo'] == 3){
-                $nombre = "Master";
+                $nombre = "Máster";
                 $tipo = 3;
             }
             if($_GET['tipo'] == 4){
@@ -128,7 +128,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="textinput">Ubicacion</label>  
+                      <label class="col-md-4 control-label" for="textinput">Ubicación</label>  
                       <div class="col-md-4">
                           <select  id="select-beast" name="id_distrito" required>
                             <option value="" selected>Seleccionar</option>
@@ -234,7 +234,7 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="textinput">Ubicacion</label>  
+                      <label class="col-md-4 control-label" for="textinput">Ubicación</label>  
                       <div class="col-md-4">
                           <select id="select-beast"  name="id_distrito"  required>
                             <option value="" selected>Seleccionar</option>

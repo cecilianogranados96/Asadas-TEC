@@ -8,7 +8,7 @@
       
             <tr class="warning">
                 <th>
-                    <center><b>Codigo producto</b></center>
+                    <center><b>Código producto</b></center>
                 </th>
                 <th>
                     <center><b>Nombre</b></center>

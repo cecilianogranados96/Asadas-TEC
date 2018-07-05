@@ -58,7 +58,7 @@
         <center><h1>Crear Asada</h1></center>
         <form method="post" action="?pag=<?php echo $_GET['pag']; ?>&nuevo=1&nuevo1=1" class="form-horizontal" enctype="multipart/form-data">       
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite el nombre:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité el nombre:</label>  
               <div class="col-md-4">
                   <input name="nombre" type="text" placeholder="Título" class="form-control input-md" required>
               </div>
@@ -90,19 +90,19 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite la dirección exacta:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité la dirección exacta:</label>  
               <div class="col-md-4">
                   <textarea name="direccion" class="form-control"></textarea>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite la cédula jurídica:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité la cédula jurídica:</label>  
               <div class="col-md-4">
                   <input name="cedulaJuridica" id="cedula" type="text" placeholder="Cédula jurídica" class="form-control input-md" required>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite el correo:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité el correo:</label>  
               <div class="col-md-4">
                   <input name="email" type="email" placeholder="Correo electrónico" class="form-control input-md" required>
               </div>
@@ -114,13 +114,13 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">*Digite el número de telefono:</label>  
+              <label class="col-md-4 control-label" for="textinput">*Digité el número de teléfono:</label>  
               <div class="col-md-4">
                   <input name="telefono" id="numero" type="text" placeholder="Número de teléfono" class="form-control input-md" required>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">Digite el horario:</label>  
+              <label class="col-md-4 control-label" for="textinput">Digité el horario:</label>  
               <div class="col-md-4">
                   <textarea name="horario" class="form-control"></textarea>
               </div>

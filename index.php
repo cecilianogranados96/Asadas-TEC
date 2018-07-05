@@ -3,7 +3,7 @@
 session_start();
 
 include "config.php";
-
+include "controller/funciones.php";
 if (file_exists("view/header.php")) {
     include "view/header.php";
 }

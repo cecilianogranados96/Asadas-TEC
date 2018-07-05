@@ -57,7 +57,7 @@
              
             <li><a href='#'>Usuarios</a>
                 <ul class='sub-nav'>
-                    <li><a href='?pag=master/usuarios&tipo=3'>Master</a></li>
+                    <li><a href='?pag=master/usuarios&tipo=3'>Máster</a></li>
                     <li><a href='?pag=master/usuarios&tipo=2'>Administradores</a></li>
                     <li><a href='?pag=master/usuarios&tipo=4'>Fontaneros</a></li>
                  </ul>
@@ -137,7 +137,7 @@
                                     ?>
                                         <li>
                                             <div class="iocn-holder"><span class="fa fa-home"></span></div>
-                                            <div class="text-holder"><h6>Asada</h6><a href="#"><p><?php echo str_replace("ASADA",'', $nombre['nombre']); ?></p></a></div>
+                                            <div class="text-holder"><h6>Acueducto</h6><a href="#"><p><?php echo str_replace("ASADA",'', $nombre['nombre']); ?></p></a></div>
                                         </li>
                                         <li>
                                             <div class="iocn-holder"><span class="fa fa-phone-square"></span></div>
@@ -146,7 +146,7 @@
                                     <?php } }else{ ?>
                                         <li>
                                             <div class="iocn-holder"><span class="fa fa-home"></span></div>
-                                            <div class="text-holder"><h6>Asada</h6><a href="#"><p>Tecnológico de Costa Rica</p></a></div>
+                                            <div class="text-holder"><h6>Acueductos</h6><a href="#"><p>Tecnológico de Costa Rica</p></a></div>
                                         </li>
                                         <li>
                                             <div class="iocn-holder"><span class="fa fa-phone-square"></span></div>
@@ -192,19 +192,17 @@
 							<div class="right-area">
                                 <?php 
                                 if(!isset($_SESSION["tipo"])){
-                                    echo "<div class='link_btn float_right'><a href='?pag=general/login' class='thm-btn bg-clr1'>Iniciar Session</a></div>";
+                                    echo "<div class='link_btn float_right'><a href='?pag=general/login' class='thm-btn bg-clr1'>Iniciar Sesión</a></div>";
                                 }else{
                                     if (isset($_SESSION["masterizado"])){
                                         if ($_SESSION["masterizado"] == 1){
-                                            echo "<div class='link_btn float_right'><a href='?pag=general/salir' class='thm-btn bg-clr1' style='background-color: #d9534f !important;border-color: #d43f3a;'>Salir (Master)</a></div>";
+                                            echo "<div class='link_btn float_right'><a href='?pag=general/salir' class='thm-btn bg-clr1' style='background-color: #d9534f !important;border-color: #d43f3a;'>Salir (Máster)</a></div>";
                                         }else{
                                             echo "<div class='link_btn float_right'><a href='?pag=general/salir' class='thm-btn bg-clr1'>Salir</a></div>";
                                         }
                                     }else{
                                         echo "<div class='link_btn float_right'><a href='?pag=general/salir' class='thm-btn bg-clr1'>Salir</a></div>";
                                     }
-                                    
-                                
                                 }
                                 ?>
 							</div>

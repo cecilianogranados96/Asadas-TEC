@@ -9,7 +9,7 @@
 								<h2><span>Nuestros</span> Asociados</h2>
 							</div>
 							<p>
-								Cada asada que se une a nuestro movimiento crea un cambio en la percepcion de la rapidez de los servicios publicos.
+								Cada asada que se une a nuestro movimiento crea un cambio en la percepción de la rapidez de los servicios públicos.
 							</p>
 						</div>
 					</div>
@@ -35,10 +35,10 @@
 					<div class="row pb-30 text-center">
 						<div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
 							<div class="creative_heading">
-								<h2><span>Ultimas</span> Noticias</h2>
+								<h2><span>Última</span> Noticias</h2>
 							</div>
 							<p>
-								Para nuestros asociados cada actividad es de suma importancia para el mantenimiento y cuido hidrico del canton.
+								Para nuestros asociados cada actividad es de suma importancia para el mantenimiento y cuido hídrico del cantón.
 							</p>
 						</div>
 					</div>
@@ -84,7 +84,7 @@
 								</div>
 								<h3 class="heading">Fácil</h3>
 								<div class="desc">
-									Intuitivo y rapido de activar, has una cuenta y realiza tu solicitud.
+									Intuitivo y rápido de activar, has una cuenta y realiza tu solicitud.
 								</div>
 							</div>
 						</div>
@@ -95,7 +95,7 @@
 								</div>
 								<h3 class="heading">Rápido</h3>
 								<div class="desc">
-									Los tiempos de respuesta son mejores, reliza tus tramites desde la comodida de tu hogar.
+									Los tiempos de respuesta son mejores, realiza tus tramites desde la comodidad de tu hogar.
 								</div>
 							</div>
 

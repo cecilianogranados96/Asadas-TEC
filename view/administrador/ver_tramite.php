@@ -7,7 +7,7 @@
                 '".$_POST['encargado']."',
                 '".$_SESSION["usuario"]."')";
                 mysqli_query($link,$querry);
-                echo "<script>alert('Orden creada con exito');location.href='?pag=".$_GET['pag']."&formulario=".$_GET['formulario']."';</script>";
+                echo "<script>alert('Orden creada con éxito');location.href='?pag=".$_GET['pag']."&formulario=".$_GET['formulario']."';</script>";
             }
         
         
@@ -54,7 +54,7 @@
                 <tr class="danger">
                     <td>
                         <center>
-                            <b>Numero</b>
+                            <b>Número</b>
                         </center>
                     </td>
                     <td>

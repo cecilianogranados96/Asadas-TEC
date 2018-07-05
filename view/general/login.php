@@ -1,43 +1,32 @@
 <?php
-
-
 require_once "controller/general/fb/fbsdk4-5.1.2/src/Facebook/autoload.php";
-
 $fb = new Facebook\Facebook([
   'app_id' => $app_id,
   'app_secret' => $app_secret,
   'default_graph_version' => 'v2.2'
   ]);
-
 $helper = $fb->getRedirectLoginHelper();
-
-$permissions = ['email']; // permisos
+$permissions = ['email'];
 $loginUrl = $helper->getLoginUrl($login_url, $permissions);
 
 
-
-
-
 if(isset($_GET['recuperar'])){
-    $user =$_POST['email'];
-    $query = "SELECT * FROM User WHERE email = '$user' or username  = '$user' ";
+    $cedula =$_POST['cedula'];
+    $query = "SELECT persona.cedula,persona.email,usuario.contrasena,usuario.usuario,usuario.id_usuario FROM `persona`,usuario WHERE persona.id_persona = usuario.id_persona and `cedula` = '$cedula' ";
     $result = $link->query($query);
     $usuario_datos = $result->fetch_array(MYSQLI_ASSOC);
- 
 	if ($result->num_rows != 0)
     {
-                enviar_email(
+                echo enviar_email(
                     $usuario_datos['email'],
-                    "Cambio de password",
-                    "Ha solicitdado un cambio de contraseña para esto solamente has click en el enlace, si no fue usted el que pidio el cambio de contraseña, haga caso omiso de este email.",
-                    "https://radar.pet/?pag=general/nuevo_pass&cod=".$usuario_datos['password']."&user=".$usuario_datos['username']."",
+                    "Cambio de contraseña",
+                    "Ha solicitado un cambio de contraseña para esto solamente has clic en el enlace, si no fue usted el que pidió el cambio de contraseña, haga caso omiso de este email.",
+                    "https://asadastec.tk/?pag=general/nuevo_pass&cod=".$usuario_datos['contrasena']."&id=".$usuario_datos['id_usuario']."&user=".$usuario_datos['email']."",
                     "Cambiar Password"
                 );
-                echo "<script languaje='JavaScript'>alert('Se envio un correo, verifica tu email.'); </script>";
+                echo "<script languaje='JavaScript'>alert('Se envió un correo, verifica tu email.'); </script>";
         
                 echo "<script>window.location='?pag=general/login&error_login=9'</script>";
-        
-        
                 exit;
     }else{
      echo "<script>window.location='?pag=general/login&error_login=5'</script>";
@@ -60,13 +49,13 @@ if(isset($_GET['recuperar'])){
              if ($_GET['error_login'] == 5)
                 echo "<div class='btn btn-lg btn-danger btn-block'>No autorizado</div>";    
             if ($_GET['error_login'] == 6)
-                echo "<div class='btn btn-lg btn-success btn-block'>Inicia session - Registrado con éxito!</div>"; 
+                echo "<div class='btn btn-lg btn-success btn-block'>Inicia sesión - Registrado con éxito!</div>"; 
             if ($_GET['error_login'] == 7)
                 echo "<div class='btn btn-lg btn-danger btn-block'>Usuario registrado con anterioridad - Recupera la contraseña!</div>"; 
             if ($_GET['error_login'] == 8)
                 echo "<div class='btn btn-lg btn-info btn-block'>Registrate es simple y facil!</div>"; 
             if ($_GET['error_login'] == 9)
-                echo "<div class='btn btn-lg btn-info btn-block'>Se envio un correo, verifica tu email.</div>"; 
+                echo "<div class='btn btn-lg btn-info btn-block'>Se envió un correo, verifica tu email.</div>"; 
             if ($_GET['error_login'] == 10)
                 echo "<div class='btn btn-lg btn-success btn-block'>Contraseña Cambiada con éxito - Inicia sesión.</div>"; 
     
@@ -119,7 +108,7 @@ if(isset($_GET['recuperar'])){
                     <h2>Olvido la contraseña</h2>
                     <hr class="colorgraph">
                     <div class="form-group">
-                        <input type="text" name="email" id="email" class="form-control input-lg" placeholder="Nombre de usuario o email" required>
+                        <input type="text" name="cedula" id="cedula" class="form-control input-lg" placeholder="Digite su número de cédula" required>
                     </div>
             
                     <span class="button-checkbox">
@@ -141,7 +130,16 @@ if(isset($_GET['recuperar'])){
             
             
             
+          <script src="https://nosir.github.io/cleave.js/dist/cleave.min.js"></script>  
             
+            <script>
+                      var cleave = new Cleave('#cedula', {
+            prefix: '',
+            delimiter: '-',
+            blocks: [1, 4, 4],
+            uppercase: true
+        });
+                </script>
               <?php } ?>
             
             
