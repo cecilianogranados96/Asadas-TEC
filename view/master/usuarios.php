@@ -72,6 +72,11 @@
                     '".$_POST['direccion']."',
                     '".$_POST['id_distrito']."'
                 )");
+                if($tipo == 3){
+                    $asada = 0;
+                }else{
+                    $asada = $_POST['id_asada'];
+                }
                 mysqli_query($link,"
                 INSERT INTO `usuario`(
                     `id_persona`, 
@@ -84,7 +89,7 @@
                     '".$_POST['usuario']."',
                     '".md5($_POST['password'])."',
                     '".$tipo."',
-                    '".$_POST['id_asada']."'
+                    '".$asada."'
                 )");
                 echo "<script>alert('Insertado con éxito');location.href='?pag=".$_GET['pag']."&tipo=".$_GET['tipo']."';</script>";
             }

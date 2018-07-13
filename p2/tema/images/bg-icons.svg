@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="1920px" height="1080px" viewBox="0 0 1920 1080">
+<filter filterUnits="objectBoundingBox" x="0.00" y="0.00" width="100.00" height="100.00" id="filter0">
+<feImage x="0" y="0" width="1920" height="1020" preserveApectRatio="none" xlink:href="#symbol0"/>
+<feComposite in="grImage1" in2="SourceAlpha" operator="in" result="grOverlay1"/>
+<feBlend in="grOverlay1" in2="SourceGraphic" mode="normal" result="gradientOverlay1"/>
+</filter>
+<filter filterUnits="objectBoundingBox" x="0.00" y="0.00" width="100.00" height="100.00" id="filter1">
+<feImage x="-399" y="-215" width="1018" height="1192" preserveApectRatio="none" xlink:href="#symbol1"/>
+<feComposite in="grImage1" in2="SourceAlpha" operator="in" result="grOverlay1"/>
+<feBlend in="grOverlay1" in2="SourceGraphic" mode="normal" result="gradientOverlay1"/>
+</filter>
+<filter filterUnits="objectBoundingBox" x="0.00" y="0.00" width="100.00" height="100.00" id="filter2">
+<feImage x="1213" y="-732" width="1018" height="921" preserveApectRatio="none" xlink:href="#symbol2"/>
+<feComposite in="grImage1" in2="SourceAlpha" operator="in" result="grOverlay1"/>
+<feBlend in="grOverlay1" in2="SourceGraphic" mode="normal" result="gradientOverlay1"/>
+</filter>
+<filter filterUnits="objectBoundingBox" x="0.00" y="0.11" width="100.00" height="99.89" id="filter3">
+<feImage x="1250" y="457" width="1097" height="951" preserveApectRatio="none" xlink:href="#symbol3"/>
+<feComposite in="grImage1" in2="SourceAlpha" operator="in" result="grOverlay1"/>
+<feBlend in="grOverlay1" in2="SourceGraphic" mode="normal" result="gradientOverlay1"/>
+</filter>
+<linearGradient id="linear_PSgrad_0" x1="0%" y1="100%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="rgb(23,117,239)" stop-opacity="1" />
+    <stop offset="100%" stop-color="rgb(50,149,248)" stop-opacity="1" />
+</linearGradient>
+
+<linearGradient id="linear_PSgrad_1" x1="0%" y1="100%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="rgb(25,117,239)" stop-opacity="1" />
+    <stop offset="100%" stop-color="rgb(50,149,248)" stop-opacity="1" />
+</linearGradient>
+
+<linearGradient id="linear_PSgrad_2" x1="0%" y1="100%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="rgb(25,117,239)" stop-opacity="1" />
+    <stop offset="100%" stop-color="rgb(50,149,248)" stop-opacity="1" />
+</linearGradient>
+
+<linearGradient id="linear_PSgrad_3" x1="0%" y1="100%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="rgb(23,117,239)" stop-opacity="1" />
+    <stop offset="100%" stop-color="rgb(50,149,248)" stop-opacity="1" />
+</linearGradient>
+
+<defs>
+<rect x="0" y="0" width="1920" height="1020" id="symbol0" fill="url(#linear_PSgrad_0)"/><rect x="0" y="0" width="1018" height="1192" id="symbol1" fill="url(#linear_PSgrad_1)"/><rect x="0" y="0" width="1018" height="921" id="symbol2" fill="url(#linear_PSgrad_2)"/><rect x="0" y="0" width="1097" height="951" id="symbol3" fill="url(#linear_PSgrad_3)"/></defs>
+<g><rect x="0" y="0" width="1920" height="1020" fill="rgb(23,117,239)" filter="url(#filter0)"/><path fillRule="evenodd" d="M 18.07-185.25C 18.07-185.25 366.72-273.38 497.65-144.59 497.65-144.59 687.94 55 591.43 245.83 591.43 245.83 528.67 404.57 311 637 311 637-70.74 1012.53-164 974-257.26 935.47-398.71 88.86-398.71 88.86-398.71 88.86-241.73-35.25-241.73-35.25-241.73-35.25 18.07-185.25 18.07-185.25Z" fill="rgb(101,101,101)" filter="url(#filter1)"/><path fillRule="evenodd" d="M 1630.07-702.25C 1630.07-702.25 1978.72-790.38 2109.65-661.59 2109.65-661.59 2299.94-462 2203.43-271.17 2203.43-271.17 2151.17-190.43 1963-66 1963-66 1539.26 223.53 1446 185 1352.74 146.47 1213.29-428.14 1213.29-428.14 1213.29-428.14 1370.27-552.25 1370.27-552.25 1370.27-552.25 1630.07-702.25 1630.07-702.25Z" fill="rgb(101,101,101)" filter="url(#filter2)"/><path fillRule="evenodd" d="M 2056.05 671.33C 2052.13 526.11 1968.48 407.41 1856.93 479.83 1817.46 505.45 1796.01 554.95 1756.91 581.31 1720.94 605.57 1676.07 608.69 1634.07 608.54 1549.01 608.22 1450.13 570.89 1424.6 687.64 1407.21 767.14 1507.66 817.83 1483.12 894.37 1475.47 918.28 1451.66 935.97 1432.11 950.89 1383.55 987.94 1347.39 1019.79 1311.44 1072.45 1244.12 1170.98 1239.35 1216.89 1262.88 1278.94 1288.41 1346.21 1383.84 1409.35 1463.04 1377.8 1558.05 1339.97 1549.05 1259.21 1654.76 1217.4 1743.97 1182.09 1771.13 1257.79 1804.59 1319.71 1867.69 1436.53 1990.27 1432.07 2073.75 1330.69 2100.95 1297.66 2147.34 1225.49 2138.16 1178.22 2130.74 1140.07 2080.76 1117.05 2056.55 1091.21 1971.39 1000.33 2114.45 967.68 2189.48 934.29 2261.19 902.39 2376.8 836.79 2338.61 718.43 2325.5 677.82 2234.14 641.47 2197.32 655.63 2145.24 675.67 2057.56 727.5 2056.05 671.33Z" fill="rgb(101,101,101)" filter="url(#filter3)"/><g><circle cx="549.50" cy="693.50" r="16.50" fill="rgb(255,255,255)" opacity="0.10"/><circle cx="1334.50" cy="364.50" r="21.50" fill="rgb(255,255,255)" opacity="0.20"/><circle cx="1000.50" cy="809.50" r="17.50" fill="rgb(255,255,255)" opacity="0.20"/><circle cx="783.50" cy="826.50" r="8.50" fill="rgb(255,255,255)" opacity="0.20"/><circle cx="575.50" cy="718.50" r="5.50" fill="rgb(255,255,255)" opacity="0.10"/><path fillRule="evenodd" d="M 1299 559C 1299 559 1302.8 544.8 1302.8 544.8 1302.8 544.8 1313.2 555.2 1313.2 555.2 1313.2 555.2 1299 559 1299 559Z" fill="rgb(255,255,255)" opacity="0.30"/><path fillRule="evenodd" d="M 979.11 104.77C 979.11 104.77 955.59 100.98 955.59 100.98 955.59 100.98 970.63 82.5 970.63 82.5 970.63 82.5 979.11 104.77 979.11 104.77Z" fill="rgb(255,255,255)" opacity="0.30"/><path fillRule="evenodd" d="M 619.97 310.79C 619.97 310.79 656.54 299.33 656.54 299.33 656.54 299.33 648.18 336.74 648.18 336.74 648.18 336.74 619.97 310.79 619.97 310.79Z" fill="rgb(255,255,255)" opacity="0.30"/></g></g></svg>

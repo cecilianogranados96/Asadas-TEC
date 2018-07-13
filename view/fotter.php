@@ -1,4 +1,5 @@
-			<footer class="footer">
+
+		<footer class="footer">
 				<div class="copyright">
 					<div class="container">
 						<p>
@@ -23,4 +24,4 @@
 		<script src="assets/js/mail.js" type="text/javascript"></script>
 		<script src="assets/js/custom.js" type="text/javascript"></script>
 	</body>
-</html>
+</html> 

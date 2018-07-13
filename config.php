@@ -6,7 +6,7 @@ $contrasena = "asadas123*";
 $base = "admin_asadas";
 $link = new mysqli("$host", "$usuario", "$contrasena", "$base");
 //%%%%%%%%%%%%%%% Configuracion de cantidad de registros por pagina %%%%%%%%%%%%%%%
-$TAMANO_PAGINA = 1;
+$TAMANO_PAGINA = 10;
 //%%%%%%%%%%%%%%% Configuracion de login de facebook %%%%%%%%%%%%%%%
 $login_url = "https://asadastec.tk/controller/general/fb/callback.php";
 $app_id = "480677335695670";

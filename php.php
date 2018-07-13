@@ -1,7 +1,5 @@
 <?php
-
 include "config.php";
-
  $ACCESS_PWD='admin123*'; #!!!IMPORTANT!!! this is script access password, SET IT if you want to protect you DB from public access
 
  #DEFAULT db connection settings

@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon-zfplmk.eot');
+  src:  url('fonts/icomoon-zfplmk.eot#iefix') format('embedded-opentype'),
+    url('fonts/icomoon-zfplmk.ttf') format('truetype'),
+    url('fonts/icomoon-zfplmk.woff') format('woff'),
+    url('fonts/icomoon-zfplmk.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-signup:before {
+  content: "\e900";
+}
+.icon-login:before {
+  content: "\e901";
+}
+.icon-diamond:before {
+  content: "\e902";
+}
+.icon-dropbox:before {
+  content: "\e903";
+}
+.icon-eye:before {
+  content: "\e904";
+}
+.icon-ghost:before {
+  content: "\e905";
+}
+.icon-layers:before {
+  content: "\e906";
+}
+.icon-note:before {
+  content: "\e907";
+}
+.icon-picture:before {
+  content: "\e908";
+}
+.icon-gift:before {
+  content: "\e909";
+}
+.icon-star:before {
+  content: "\e90a";
+}
+.icon-tumblr:before {
+  content: "\e90b";
+}

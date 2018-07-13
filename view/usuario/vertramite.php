@@ -20,12 +20,21 @@
                 $respuesta = json_decode($tramite['respuesta'],true);
                 $identificador = 0;
                 foreach ($array as $i => $value) {
-                    $identificador ++;
+                    $identificador++;
                     if ($array[$i]["tipo"] == 4 ){
-                        echo "<tr><td>".$array[$i]["nombre"]."</td><td>
-                        <center><a href='".$respuesta[$i+1]."' class='btn btn-success' target='_blank'>Ver/Descargar</a></center></td></tr>";
+                        echo "<tr>
+                            <td>".$array[$i]["nombre"]."</td>
+                            <td>
+                                <center>
+                                    <a href='".$respuesta[$i+1]."' class='btn btn-success' target='_blank'>Ver/Descargar</a>
+                                </center>
+                            </td>
+                            </tr>";
                     }else{
-                        echo "<tr><td>".$array[$i]["nombre"]."</td><td>".$respuesta[$i+1]."</td></tr>";
+                        echo "<tr>
+                            <td>".$array[$i]["nombre"]."</td>
+                            <td>".$respuesta[$i+1]."</td>
+                            </tr>";
                     }
                 }
                 ?>

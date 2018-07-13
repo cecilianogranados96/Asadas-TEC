@@ -57,7 +57,7 @@
                             <td width="30%"><center><b>'.$r['asada'].'</b></center></th>
                             <td width="50%">'.$r['descripcion'].'</th>
                             <td width="10%">'.$accion.'</td>
-                            <td width="10%"><a href="?pag=usuario/llenartramite&tramite='.$r['id_tramite'].'" class="btn btn-info">Visualizar</a></td>
+                            <td width="10%"><a href="?pag=usuario/llenartramite&tramite='.$r['id_tramite'].'&paso=2" class="btn btn-info">Visualizar</a></td>
                             
                         </tr> 
                         ';

@@ -25,9 +25,8 @@
                  </ul>
              <li>
              <li><a href='#'>Usuarios</a> 
-                 <ul class='sub-nav'>
+                 <ul class='sub-nav'>   
                     <li><a href='?pag=administrador/usuarios&tipo=2'>Administradores</a><li>
-
                     <li><a href='?pag=administrador/usuarios&tipo=4'>Fontaneros</a> 
                         <ul class='sub-nav'>
                             <li><a href='?pag=administrador/usuarios&tipo=4'>Inventario Fontaneros</a><li>
@@ -35,6 +34,17 @@
                      <li>
                  </ul>
              <li>
+             <!--<li><a href='#'>Clientes</a> 
+                 <ul class='sub-nav'>   
+                    <li><a href='?pag=administrador/'>Clientes</a><li>
+                    <li><a href='?pag=administrador/'>Mediciones</a> 
+                        <ul class='sub-nav'>
+                            <li><a href='?pag=administrador/'>Configuración</a><li>
+                         </ul>
+                     <li>
+                 </ul>
+             <li>-->
+             
              <li><a href='?pag=administrador/info_asada'>Esta Asociación</a>
                 <ul class='sub-nav'>
                     <li><a href='?pag=administrador/junta_directiva'>Junta Directiva</a><li>
@@ -50,8 +60,8 @@
             
              <li><a href='?pag=master/tramites'>Formularios Generales</a> 
                 <ul class='sub-nav'>
-                    <li><a href='?pag=master/crear_tramite'>Crear Formularios</a><li>
-                    <li><a href='?pag=master/tramites'>Ver Formularios</a><li>
+                    <li><a href='?pag=administrador/crear_tramite'>Crear Formularios</a><li>
+                    <li><a href='?pag=administrador/tramites'>Ver Formularios</a><li>
                  </ul>
              <li>
              
@@ -77,7 +87,8 @@
         $menu = "<li><a href='index.php'>Inicio</a></li>";
     }
 ?>
-<html>
+
+   <html>
     <head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<title>Asadas TEC</title>
@@ -94,7 +105,7 @@
 		<script src="assets/js/jquery-1.12.4.min.js" type="text/javascript"></script>
         <link href="assets/css/nav_corporate.css" rel="stylesheet" type="text/css">
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-        <script src="assets/js/jquery.min.js"></script>
+ 
         <link rel="stylesheet" href="assets/css/selectize.default.css" data-theme="default">
         <link rel="stylesheet" href="assets/css/selectize.bootstrap3.css" data-theme="bootstrap3" disabled="disabled">
         <script src="https://cdn.ckeditor.com/ckeditor5/10.1.0/classic/ckeditor.js"></script>
@@ -164,13 +175,12 @@
 					</div>
 				</div>
 			</header>
-			<!--Start mainmenu area-->
+
 			<section class="mainmenu-area">
 				<div class="container">
 					<div class="mainmenu-bg">
 						<div class="row">
 							<div class="col-md-12 col-sm-12 col-xs-12">
-								<!--Start mainmenu-->
 								<nav class="main-menu">
 									<div class="navbar-header">
 										<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -210,3 +220,6 @@
 					</div>
 				</div>
 			</section>
+			
+		
+	

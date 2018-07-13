@@ -21,14 +21,12 @@
                     $array += [ "nombre" => $_POST["nombre"][$x] ];
                     $array += [ "tipo" => $_POST["tipo"][$x] ];
                     $array += [ "requerido" => $_POST["requerido"][$x] ];
-
                     if (isset($_POST["campo"][$x])){
                         $array += [ "campo" => $_POST["campo"][$x] ];
                     }else{
                         $array += [ "campo" => "ninguno" ];
 
                     }
-
                     if (isset($_POST["opciones"][$x])){
                         $array += [ "opciones" => explode(",", $_POST["opciones"][$x]) ];
                     }else{
@@ -36,7 +34,6 @@
                     }   
 
                     array_push ($array_general,$array );
-
                     $x++;
                 }
                 $querry = "
@@ -59,6 +56,7 @@
                 echo "<script>alert('Insertado con éxito');location.href='?pag=".$_GET['pag']."';</script>";
             }
         ?>
+        
         <center>
             <h1>Crear formulario</h1>
         </center>
@@ -69,7 +67,6 @@
                     <input name="nombre_tramite" type="text" placeholder="Nombre" class="form-control input-md" required>
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Plantilla</label>
                 <div class="col-md-4">
@@ -88,7 +85,7 @@
                     <textarea name="requisitos" class="form-control input-md" placeholder="Requisitos" required></textarea>
                 </div>
             </div>
-            <table class="table" id="table-data">
+            <table class="table" id="formulario">
                 <tr>
                     <td>
                         <center><b>Nombre del campo</b></center>
@@ -98,9 +95,6 @@
                     </td>
                     <td>
                         <center><b>Opciones</b></center>
-                    </td>
-                    <td>
-                        <center><b>Predeterminado</b></center>
                     </td>
                     <td>
                         <center><b>Requerido</b></center>
@@ -124,30 +118,29 @@
                         </select>
                     </td>
                     <td>
-                        <input readonly id="opciones1" name="opciones[]" type="text" placeholder="Separadas por comas" class="form-control input-md" />
-                    </td>
-                    <td>
-                        <select readonly id="campo1" name="campo[]" class="form-control input-md" >
-                           <option value="ninguno">Ninguno</option>
-                           <option value="nombre_completo">Nombre Completo</option>
-                           <option value="nombre">Nombre</option>
-                           <option value="primer_apellido">Primer Apellido</option>
-                           <option value="segundo_apellido">Segundo Apellido</option>
-                           <option value="direccion"> Dirección </option>
-                           <option value="distrito">Distrito</option>
-                           <option value="asada">Asada por defecto</option>
+                        <input readonly id="opciones1" name="opciones[]" type="text" placeholder="Separadas por comas" class="form-control input-md"/>
+                    
+                        <select readonly id="campo1" name="campo[]" class="form-control input-md" style="display: none;">
+                           <option value="ninguno">Predeterminado: Ninguno</option>
+                           <option value="nombre_completo">Predeterminado: Nombre Completo</option>
+                           <option value="nombre">Predeterminado: Nombre</option>
+                           <option value="primer_apellido">Predeterminado: Primer Apellido</option>
+                           <option value="segundo_apellido">Predeterminado: Segundo Apellido</option>
+                           <option value="direccion"> Predeterminado: Dirección </option>
+                           <option value="distrito">Predeterminado: Distrito</option>
+                           <option value="asada">Predeterminado: Nombre Asada por defecto</option>
                         </select>
                     </td>
                     
                     <td>
                         <select id="requerido1" name="requerido[]" class="form-control input-md" >
-                           <option value="1">Si</option>
+                           <option value="1">Sí</option>
                            <option value="2">No</option>
                         </select>
                     </td>
                     
                     <td>    
-                        <button class="clone btn btn-success">Añadir Campo</button> 
+                        <button type="button" class="clone btn btn-success">Añadir Campo</button> 
                     </td>
                 </tr>
             </table>
@@ -156,42 +149,44 @@
     </div>
 </div>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.6.4.js"></script>
-
-<script type="text/javascript">    
-    
+<script type="text/javascript">  
     function verificar(att){
-        
-        
         var regex = /(\d+)/g;
         var name= $(att).attr("id");
-        
         if($(att).val() == 1){ // Campo
             $('#campo'+name.match(regex)[0]).removeAttr("readonly");
             $('#opciones'+name.match(regex)[0]).attr("readonly","readonly");
+       
+            $('#campo'+name.match(regex)[0]).show();
+            $('#opciones'+name.match(regex)[0]).hide();
         }
         if($(att).val() == 2){ //Seleccionable
-                $('#opciones'+name.match(regex)[0]).removeAttr("readonly");
-                $('#campo'+name.match(regex)[0]).attr("readonly","readonly");
+            $('#opciones'+name.match(regex)[0]).removeAttr("readonly");
+            $('#campo'+name.match(regex)[0]).attr("readonly","readonly");
+       
+            $('#campo'+name.match(regex)[0]).hide();
+            $('#opciones'+name.match(regex)[0]).show();
         }
         if($(att).val() == 3){ // Texto
             $('#campo'+name.match(regex)[0]).removeAttr("readonly");
             $('#opciones'+name.match(regex)[0]).attr("readonly","readonly");
+                   
+            $('#campo'+name.match(regex)[0]).show();
+            $('#opciones'+name.match(regex)[0]).hide();
         }
         if($(att).val() == 4){ // Archivo
             $('#campo'+name.match(regex)[0]).attr("readonly","readonly");
             $('#opciones'+name.match(regex)[0]).attr("readonly","readonly");
-        }
-        
-
-        
+                   
+            $('#campo'+name.match(regex)[0]).show();
+            $('#opciones'+name.match(regex)[0]).hide();
+        }        
     }
-    
-    
-$(window).load(function(){        
+
+$(window).load(function(){       
     var regex = /^(.+?)(\d+)$/i;
     var cloneIndex = $(".clonedInput").length+1;
-
-    function clone(){
+    function clone(){        
         $(this).parents(".clonedInput").clone()
             .appendTo("table")
             .attr("id", "clonedInput" +  cloneIndex)
@@ -206,20 +201,11 @@ $(window).load(function(){
             .on('click', 'button.clone', clone);
         cloneIndex++;
     }
-
     function remove(){
         $(this).parents(".clonedInput").remove();
     }
-
-    
-    
-
     $("button.clone").on("click", clone);
-
-
-
-    });
-
+});
 </script>
 
 

@@ -185,7 +185,11 @@ function desencriptar($texto,$key){
 
 
 
-
+function ver($var){
+    echo "<pre>";
+    print_r($var);
+    echo "</pre>";
+}
 
     
 ?>
