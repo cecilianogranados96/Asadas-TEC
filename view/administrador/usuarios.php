@@ -107,6 +107,7 @@
                                 while($r = mysqli_fetch_assoc($sth)) {
                                     echo '<option value="'.$r['codigo'].'">'.$r['ubicacion'].'</option>';
                                 }
+             mysqli_next_result($link);
                               ?>
                           </select>
                           
@@ -130,6 +131,7 @@
                           <select id="select-beast" name="id_asada" class="form-control"  required>
                               <option value="" selected>Seleccionar</option>
                             <?php 
+             mysqli_next_result($link);
                               $sth = mysqli_query($link,"SELECT id_asada,nombre FROM `asada` ");
                                             while($r = mysqli_fetch_assoc($sth)) {
                                                 echo '<option value="'.$r['id_asada'].'">'.$r['nombre'].'</option>';
