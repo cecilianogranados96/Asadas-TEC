@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**Describe el error**
+**Describir el error**
 Una descripción clara y concisa de lo que es el error.
 
 **Reproducir**
