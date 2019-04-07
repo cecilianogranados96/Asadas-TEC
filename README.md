@@ -56,7 +56,7 @@ Descripción:
 
 * **José Andrés Ceciliano Granados** - *Programador Principal* - [cecilianogranados96](https://github.com/cecilianogranados96)
 
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
+También puedes mirar la lista de todos los [contribuyentes](https://github.com/cecilianogranados96/Asadas-TEC/contributors) quíenes han participado en este proyecto. 
 
 ## Licencia 📄
 
