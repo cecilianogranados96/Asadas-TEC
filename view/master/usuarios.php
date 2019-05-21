@@ -21,7 +21,7 @@
                 }
             }
         } else {
-            $tipo = 0;
+            echo "<script>alert('No ha ingresado al sistema.');location.href='index.php';</script>";
         }
 
         if (isset($_GET['eliminar'])) {
