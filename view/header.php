@@ -157,7 +157,7 @@
                                     <?php } }else{ ?>
                                         <li>
                                             <div class="iocn-holder"><span class="fa fa-home"></span></div>
-                                            <div class="text-holder"><h6>Acueductos</h6><a href="#"><p>Tecnológico de Costa Rica</p></a></div>
+                                            <div class="text-holder"><h6>Acueductos</h6><a href="https://www.tec.ac.cr/"><p>Tecnológico de Costa Rica</p></a></div>
                                         </li>
                                         <li>
                                             <div class="iocn-holder"><span class="fa fa-phone-square"></span></div>
@@ -166,7 +166,7 @@
                                     <?php } ?>
 									<li>
 										<div class="iocn-holder"><span class="fa fa-envelope"></span></div>
-										<div class="text-holder"><h6>Email</h6><a href="#"><p>info@asadascr.com</p></a></div>
+										<div class="text-holder"><h6>Email</h6><a href="mailto:info@asadascr.com"><p>info@asadascr.com</p></a></div>
 									</li>
 
 								</ul>
